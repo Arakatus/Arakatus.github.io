@@ -49,13 +49,11 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow({
         content: addInfo()
     });
-
     google.maps.event.addListener(infoWindow,'closeclick',function(){
-        console.log('test');
+        console.log('test')
     });
-
     for (let i = 0; i < markers.length; ++i) {
-        google.maps.event.addListener(marker[i], 'click', function () {
+        markers[i].addListener('click', function() {
             var nodes = document.getElementById("header").getElementsByTagName('*');
             for(var i = 0; i < nodes.length; i++) {
                 nodes[i].disabled = true;
