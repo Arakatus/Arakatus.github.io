@@ -8,17 +8,8 @@ html, body, #map, #mainDiv {
     position: relative;
 }
 
-.shadow {
-    -moz-box-shadow: 0 0 30px 5px #999;
-    -webkit-box-shadow: 0 0 30px 5px #999;
-}
-
 #mainDiv {
     position: relative;
-}
-
-.text-header {
-    font-size: calc(1vw + 4vh + 2vmin);
 }
 
 .disable {
@@ -27,6 +18,7 @@ html, body, #map, #mainDiv {
 }
 
 .head-css {
+    font-size: calc(1vw + 4vh + 2vmin);
     overflow: hidden;
     text-align: center;
     background-color: white;
@@ -37,6 +29,8 @@ html, body, #map, #mainDiv {
     z-index: 99;
     height: 10%;
     width: 80%;
+    -moz-box-shadow: 0 0 30px 5px #999;
+    -webkit-box-shadow: 0 0 30px 5px #999;
 }
 
 html, body {

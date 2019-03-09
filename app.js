@@ -56,7 +56,7 @@ function initMap() {
 
 function clearHeader () {
     let element = document.getElementById("helpText");
-    element.classList.add("disable");
+    element.classList.remove("disable");
 }
 
 function addInfo () {
