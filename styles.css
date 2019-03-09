@@ -19,6 +19,7 @@ html, body, #map, #mainDiv {
 }
 
 .head-css {
+    font-size: 25.5vw;
     overflow: hidden;
     text-align: center;
     background-color: white;
