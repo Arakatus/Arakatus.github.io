@@ -66,7 +66,7 @@ function initMap() {
 
 function addInfo () {
     return `
-        <div id="info" class>
+        <div id="info" class="shadow">
             <h1>Nazwa sklepu</h1>
             <h2>Zabka</h2>
             <hr>
