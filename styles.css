@@ -10,6 +10,10 @@ html, body, #map, .header, .footer {
     box-sizing: border-box;
 }
 
+html, body {
+    overflow: hidden
+}
+
 .header {
     overflow: hidden;
     background-color: #5b8bf1;
