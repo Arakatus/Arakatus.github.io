@@ -87,7 +87,7 @@ function bookTask () {
 }
 
 function addMarkerListener(marker) {
-    marker.addEventListener('click', function() {
+    marker.addListener('click', function() {
         var nodes = document.getElementById("header").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++) {
             nodes[i].disabled = true;
