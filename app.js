@@ -39,20 +39,17 @@ function initMap() {
     markers.push(marker2);
     markers.push(marker3);
     markers.push(marker4);
+    var infowindow = new google.maps.InfoWindow({
+        content: addInfo()
+    });
     for (let i = 0; i < markers.length; ++i) {
         markers[i].addListener('click', function() {
-            map.setZoom(12);
+            map.setZoom(14);
             map.setCenter(markers[i].getPosition());
             selectedMarker = markers[i];
-            main.innerHTML = addInfo();
-            document.getElementById('info').scrollIntoView();
-        });
-        markers[i].addListener('mouseover', function() {
-            infowindow.open(map, this);
-        });
-
-        markers[i].addListener('mouseout', function() {
-            infowindow.close();
+            /*main.innerHTML = addInfo();
+            document.getElementById('info').scrollIntoView();*/
+            infowindow.open(map, marker);
         });
     }
 }
