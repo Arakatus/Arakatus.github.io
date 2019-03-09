@@ -12,9 +12,10 @@ html, body, #map, #mainDiv {
     position: relative;
 }
 
-.disable {
-    pointer-events: none;
-    opacity: 100%;
+.info {
+    left: 10%;
+    right: 10%;
+    width: 80%;
 }
 
 .head-css {

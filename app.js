@@ -66,7 +66,7 @@ function showHeader () {
 
 function addInfo () {
     return `
-        <div id="info">
+        <div id="info" class="info">
             <h1>Nazwa sklepu</h1>
             <h2>Zabka</h2>
             <hr>
