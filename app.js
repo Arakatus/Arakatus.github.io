@@ -49,17 +49,22 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow({
         content: addInfo()
     });
+
+    google.maps.event.addListener(infoWindow,'closeclick',function(){
+        console.log('test');
+    });
+
     for (let i = 0; i < markers.length; ++i) {
-        markers[i].addListener('click', function() {
+        google.maps.event.addListener(marker[i], 'click', function () {
             var nodes = document.getElementById("header").getElementsByTagName('*');
             for(var i = 0; i < nodes.length; i++) {
                 nodes[i].disabled = true;
             }
             map.setZoom(14);
-            selectedMarker = markers[i];
+            selectedMarker = this;
             /*main.innerHTML = addInfo();
             document.getElementById('info').scrollIntoView();*/
-            infoWindow.open(map, markers[i]);
+            infoWindow.open(map, this);
         });
     }
 }
