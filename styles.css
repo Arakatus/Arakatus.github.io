@@ -23,7 +23,7 @@ html, body, #map, #mainDiv {
 
 .disable {
     pointer-events: none;
-    z-index: -1;
+    opacity: 100%;
 }
 
 .head-css {
