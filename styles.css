@@ -16,7 +16,13 @@ html, body, #map, #mainDiv {
 #mainDiv {
     position: relative;
 }
+
+.text-header {
+    font-size: 5%;
+}
+
 #header {
+    text-align: center;
     background-color: white;
     position: absolute;
     top: 10%;
