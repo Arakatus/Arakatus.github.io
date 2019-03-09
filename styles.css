@@ -9,6 +9,7 @@ html, body, #map, #mainDiv {
 }
 
 .shadow {
+    overflow: hidden;
     position: relative;
     -moz-box-shadow: 0 0 30px 5px #999;
     -webkit-box-shadow: 0 0 30px 5px #999;
@@ -25,7 +26,7 @@ html, body, #map, #mainDiv {
 #header {
     text-align: center;
     background-color: white;
-    position: relative;
+    position: absolute;
     top: 10%;
     left: 10%;
     right: 10%;
