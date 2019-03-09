@@ -47,6 +47,13 @@ function initMap() {
             main.innerHTML = addInfo();
             document.getElementById('info').scrollIntoView();
         });
+        markers[i].addListener('mouseover', function() {
+            infowindow.open(map, this);
+        });
+
+        markers[i].addListener('mouseout', function() {
+            infowindow.close();
+        });
     }
 }
 
@@ -63,7 +70,7 @@ function addInfo () {
             <h2>25 zł</h2>
             <hr>
             <h1>Instrukcja zadania<h1>
-            <h2>Tło biznesowe test</h2>
+            <h2>Tło biznesowe</h2>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</h3>
             <hr>
         </div>
