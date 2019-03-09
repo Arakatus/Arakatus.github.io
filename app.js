@@ -44,6 +44,7 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow({
         content: addInfo()
     });
+    
     google.maps.event.addListener(infoWindow,'closeclick',function(){
         showHeader();
     });
@@ -90,14 +91,12 @@ function bookTask () {
     showHeader();
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
-    map.setZoom(14);
     alert('Zadanie zostalo zarezerwowane!');
 }
 
 function addMarkerListener(marker) {
     marker.addListener('click', function() {
         clearHeader();
-        map.setZoom(14);
         selectedMarker = this;
         infoWindow.open(map, this);
     });
