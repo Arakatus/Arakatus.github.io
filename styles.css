@@ -1,4 +1,4 @@
-html, body, #map {
+html, body, #map, #mainDiv {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -6,7 +6,6 @@ html, body, #map {
 }
 #map {
     position: relative;
-    height: 100%;
 }
 
 .shadow {
@@ -19,6 +18,8 @@ html, body, #map {
 }
 #header {
     position: absolute; top: 10px; left: 10px; z-index: 99;
+    height: 7px;
+    width: 80%;
 }
 
 html, body {
