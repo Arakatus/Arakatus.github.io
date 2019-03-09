@@ -17,8 +17,9 @@ html, body, #map, #mainDiv {
     position: relative;
 }
 #header {
+    background-color: white;
     position: absolute; top: 10px; left: 10px; z-index: 99;
-    height: 7px;
+    height: 10%;
     width: 80%;
 }
 
