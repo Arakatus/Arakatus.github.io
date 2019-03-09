@@ -21,6 +21,11 @@ html, body, #map, #mainDiv {
     font-size: calc(1vw + 4vh + 2vmin);
 }
 
+.disable {
+    pointer-events: none;
+    z-index: 0;
+}
+
 #helpText {
     overflow: hidden;
     text-align: center;

@@ -55,7 +55,7 @@ function initMap() {
 }
 
 function clearHeader () {
-    header.innerHTML = ``;
+    $("#helpText").addClass("disable");
 }
 
 function addInfo () {
