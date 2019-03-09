@@ -83,7 +83,7 @@ function bookTask () {
     }
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
-    map.setZoom(16);
+    map.setZoom(14);
     alert('Zadanie zostalo zarezerwowane!');
 }
 
