@@ -62,7 +62,7 @@ function initMap() {
             infoWindow.open(map, markers[i]);
         });
 
-        marker[i].addListener('popupclose', function(e) {
+        marker[i].on('popupclose', function(e) {
             console.log('test');
         });
     }
