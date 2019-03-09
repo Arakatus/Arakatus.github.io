@@ -1,4 +1,4 @@
-const header = document.querySelector('header');
+const header = document.querySelector('mainDiv header');
 let map;
 let selectedMarker;
 let infoWindow;
