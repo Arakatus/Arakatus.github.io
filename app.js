@@ -52,7 +52,7 @@ function initMap() {
     for (let i = 0; i < markers.length; ++i) {
         markers[i].addListener('click', function() {
             var nodes = document.getElementById("header").getElementsByTagName('*');
-            for(var i = 0; i < nodes.length; i++){
+            for(var i = 0; i < nodes.length; i++) {
                 nodes[i].disabled = true;
             }
             map.setZoom(14);

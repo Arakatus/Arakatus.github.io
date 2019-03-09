@@ -9,6 +9,7 @@ html, body, #map, #mainDiv {
 }
 
 .shadow {
+    position: relative;
     -moz-box-shadow: 0 0 30px 5px #999;
     -webkit-box-shadow: 0 0 30px 5px #999;
 }
@@ -18,13 +19,13 @@ html, body, #map, #mainDiv {
 }
 
 .text-header {
-    font-size: 5%;
+    font-size: 3.2vw;
 }
 
 #header {
     text-align: center;
     background-color: white;
-    position: absolute;
+    position: relative;
     top: 10%;
     left: 10%;
     right: 10%;
