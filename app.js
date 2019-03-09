@@ -25,6 +25,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13, center: {lat: 52.237049, lng: 21.017532},
         gestureHandling: "greedy",
+        minZoom: 1,
         disableDefaultUI: true,
         zoomControl: false,
         mapTypeControl: false,
@@ -33,38 +34,24 @@ function initMap() {
         rotateControl: true,
         fullscreenControl: false
     });
-    var opt = { minZoom: 1};
-    map.setOptions(opt);
 
     //markers
-    var marker = new google.maps.Marker({position: {lat: 50.454, lng: 30.523}, map: map, animation: google.maps.Animation.DROP});
+    var marker1 = new google.maps.Marker({position: {lat: 50.454, lng: 30.523}, map: map, animation: google.maps.Animation.DROP});
     var marker2 = new google.maps.Marker({position: {lat: 50.405956, lng: 30.671791}, map: map, animation: google.maps.Animation.DROP});
     var marker3 = new google.maps.Marker({position: {lat: 52.2477331, lng: 21.0136079}, map: map, animation: google.maps.Animation.DROP});
     var marker4 = new google.maps.Marker({position: {lat: 52.215252, lng: 20.969019}, map: map, animation: google.maps.Animation.DROP});
-    var markers = [];
-    markers.push(marker);
-    markers.push(marker2);
-    markers.push(marker3);
-    markers.push(marker4);
+
     infoWindow = new google.maps.InfoWindow({
         content: addInfo()
     });
     google.maps.event.addListener(infoWindow,'closeclick',function(){
         console.log('test')
     });
-    for (let i = 0; i < markers.length; ++i) {
-        markers[i].addListener('click', function() {
-            var nodes = document.getElementById("header").getElementsByTagName('*');
-            for(var i = 0; i < nodes.length; i++) {
-                nodes[i].disabled = true;
-            }
-            map.setZoom(14);
-            selectedMarker = this;
-            /*main.innerHTML = addInfo();
-            document.getElementById('info').scrollIntoView();*/
-            infoWindow.open(map, this);
-        });
-    }
+
+    addMarkerListener(marker1);
+    addMarkerListener(marker2);
+    addMarkerListener(marker3);
+    addMarkerListener(marker4);
 }
 
 function addInfo () {
@@ -97,4 +84,18 @@ function bookTask () {
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     alert('Zadanie zostalo zarezerwowane!');
+}
+
+function addMarkerListener(marker) {
+    marker.addEventListener('click', function() {
+        var nodes = document.getElementById("header").getElementsByTagName('*');
+        for(var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = true;
+        }
+        map.setZoom(14);
+        selectedMarker = this;
+        /*main.innerHTML = addInfo();
+        document.getElementById('info').scrollIntoView();*/
+        infoWindow.open(map, this);
+    });
 }
