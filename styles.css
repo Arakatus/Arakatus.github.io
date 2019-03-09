@@ -1,4 +1,4 @@
-html, body, #map, .header, .footer {
+html, body, #map {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -6,33 +6,23 @@ html, body, #map, .header, .footer {
 }
 #map {
     position: relative;
-    height: 80%;
-    box-sizing: border-box;
+    height: 100%;
+}
+
+.shadow {
+    -moz-box-shadow: 0 0 30px 5px #999;
+    -webkit-box-shadow: 0 0 30px 5px #999;
+}
+
+#mainDiv {
+    position: relative;
+}
+#header {
+    position: absolute; top: 10px; left: 10px; z-index: 99;
 }
 
 html, body {
     overflow: hidden
-}
-
-.header {
-    overflow: hidden;
-    background-color: #5b8bf1;
-    height: 10%;
-    text-align: center;
-    box-sizing: border-box;
-    color: #fffbfb;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-
-.footer {
-    overflow: hidden;
-    background-color: #5b8bf1;
-    height: 9.99999%;
-    text-align: center;
-    box-sizing: border-box;
-    color: #fffbfb;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .button::-moz-focus-inner{

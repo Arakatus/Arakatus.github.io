@@ -45,7 +45,6 @@ function initMap() {
     for (let i = 0; i < markers.length; ++i) {
         markers[i].addListener('click', function() {
             map.setZoom(14);
-            map.setCenter(markers[i].getPosition());
             selectedMarker = markers[i];
             /*main.innerHTML = addInfo();
             document.getElementById('info').scrollIntoView();*/
@@ -78,5 +77,6 @@ function addInfo () {
 
 function bookTask () {
     infoWindow.close();
+    map.setCenter(selectedMarker.getPosition());
     alert('Zadanie zostalo zarezerwowane!');
 }
