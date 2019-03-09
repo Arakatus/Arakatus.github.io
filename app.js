@@ -61,10 +61,6 @@ function initMap() {
             document.getElementById('info').scrollIntoView();*/
             infoWindow.open(map, markers[i]);
         });
-
-        marker[i].on('popupclose', function(e) {
-            console.log('test');
-        });
     }
 }
 
