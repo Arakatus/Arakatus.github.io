@@ -1,6 +1,7 @@
 const main = document.querySelector('main');
 let map;
 let selectedMarker;
+let infoWindow;
 
 window.addEventListener('load', async e => {
     if ("serviceWorker" in navigator) {
@@ -17,7 +18,6 @@ window.addEventListener('load', async e => {
                 });
         }
     }
-
     initMap();
 });
 
@@ -39,7 +39,7 @@ function initMap() {
     markers.push(marker2);
     markers.push(marker3);
     markers.push(marker4);
-    var infowindow = new google.maps.InfoWindow({
+    infoWindow = new google.maps.InfoWindow({
         content: addInfo()
     });
     for (let i = 0; i < markers.length; ++i) {
@@ -49,7 +49,7 @@ function initMap() {
             selectedMarker = markers[i];
             /*main.innerHTML = addInfo();
             document.getElementById('info').scrollIntoView();*/
-            infowindow.open(map, marker);
+            infowindow.open(map, markers[i]);
         });
     }
 }
@@ -78,6 +78,4 @@ function addInfo () {
 
 function bookTask () {
     alert('Zadanie zostalo zarezerwowane!');
-    map.setCenter(selectedMarker.getPosition());
-    document.getElementById('head').scrollIntoView();
 }
