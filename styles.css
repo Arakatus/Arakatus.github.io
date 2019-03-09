@@ -27,7 +27,7 @@ html, body, #map, #mainDiv {
     text-align: center;
     background-color: white;
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 10%;
     right: 10%;
     z-index: 99;
