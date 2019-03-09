@@ -4,7 +4,7 @@
   "name" : "Hustle",
   "scope" : "/",
   "display" : "standalone",
-  "start_url" : "http://hustleapp.epizy.com/",
+  "start_url" : "/",
   "short_name" : "Hustle",
   "theme_color" : "transparent",
   "description" : "",
