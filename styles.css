@@ -19,7 +19,6 @@ html, body, #map, #mainDiv {
 }
 
 .head-css {
-    font-size: calc(1vw + 4vh + 2vmin);
     overflow: hidden;
     text-align: center;
     background-color: white;

@@ -44,7 +44,7 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow({
         content: addInfo()
     });
-    
+
     google.maps.event.addListener(infoWindow,'closeclick',function(){
         showHeader();
     });
