@@ -1,4 +1,4 @@
-const main = document.querySelector('main');
+const header = document.querySelector('header');
 let map;
 let selectedMarker;
 let infoWindow;
@@ -54,6 +54,10 @@ function initMap() {
     addMarkerListener(marker4);
 }
 
+function clearHeader () {
+    header.innerHTML = '';
+}
+
 function addInfo () {
     return `
         <div id="info">
@@ -77,10 +81,6 @@ function addInfo () {
 }
 
 function bookTask () {
-    var nodes = document.getElementById("header").getElementsByTagName('*');
-    for(var i = 0; i < nodes.length; i++){
-        nodes[i].disabled = false;
-    }
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     map.setZoom(14);
@@ -89,14 +89,9 @@ function bookTask () {
 
 function addMarkerListener(marker) {
     marker.addListener('click', function() {
-        var nodes = document.getElementById("header").getElementsByTagName('*');
-        for(var i = 0; i < nodes.length; i++) {
-            nodes[i].disabled = true;
-        }
+        clearHeader();
         map.setZoom(14);
         selectedMarker = this;
-        /*main.innerHTML = addInfo();
-        document.getElementById('info').scrollIntoView();*/
         infoWindow.open(map, this);
     });
 }
