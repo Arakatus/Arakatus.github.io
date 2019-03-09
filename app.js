@@ -31,7 +31,7 @@ function initMap() {
         scaleControl: true,
         streetViewControl: true,
         rotateControl: true,
-        fullscreenControl: true
+        fullscreenControl: false
     });
     var opt = { minZoom: 1};
     map.setOptions(opt);
