@@ -47,6 +47,13 @@ function initMap() {
             main.innerHTML = addInfo();
             document.getElementById('info').scrollIntoView();
         });
+        markers[i].addListener('mouseover', function() {
+            infowindow.open(map, this);
+        });
+
+        markers[i].addListener('mouseout', function() {
+            infowindow.close();
+        });
     }
 }
 
