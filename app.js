@@ -24,7 +24,14 @@ window.addEventListener('load', async e => {
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13, center: {lat: 52.237049, lng: 21.017532},
-        gestureHandling: "greedy"
+        gestureHandling: "greedy",
+        disableDefaultUI: true,
+        zoomControl: false,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: true,
+        rotateControl: true,
+        fullscreenControl: true
     });
     var opt = { minZoom: 1};
     map.setOptions(opt);
