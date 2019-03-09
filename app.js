@@ -45,7 +45,7 @@ function initMap() {
         content: addInfo()
     });
     google.maps.event.addListener(infoWindow,'closeclick',function(){
-        console.log('test')
+        showHeader();
     });
 
     addMarkerListener(marker1);
@@ -57,6 +57,11 @@ function initMap() {
 function clearHeader () {
     let element = document.querySelector("#helpText");
     element.style.display = 'none';
+}
+
+function showHeader () {
+    let element = document.querySelector("#helpText");
+    element.style.display = '';
 }
 
 function addInfo () {
@@ -82,6 +87,7 @@ function addInfo () {
 }
 
 function bookTask () {
+    showHeader();
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     map.setZoom(14);
