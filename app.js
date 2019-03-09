@@ -30,10 +30,10 @@ function initMap() {
     map.setOptions(opt);
 
     //markers
-    var marker = new google.maps.Marker({position: {lat: 50.454, lng: 30.523}, map: map, animation: google.maps.Animation.DROP,});
-    var marker2 = new google.maps.Marker({position: {lat: 50.405956, lng: 30.671791}, map: map, animation: google.maps.Animation.DROP,});
-    var marker3 = new google.maps.Marker({position: {lat: 52.2477331, lng: 21.0136079}, map: map, animation: google.maps.Animation.DROP,});
-    var marker4 = new google.maps.Marker({position: {lat: 52.215252, lng: 20.969019}, map: map, animation: google.maps.Animation.DROP,});
+    var marker = new google.maps.Marker({position: {lat: 50.454, lng: 30.523}, map: map, animation: google.maps.Animation.DROP});
+    var marker2 = new google.maps.Marker({position: {lat: 50.405956, lng: 30.671791}, map: map, animation: google.maps.Animation.DROP});
+    var marker3 = new google.maps.Marker({position: {lat: 52.2477331, lng: 21.0136079}, map: map, animation: google.maps.Animation.DROP});
+    var marker4 = new google.maps.Marker({position: {lat: 52.215252, lng: 20.969019}, map: map, animation: google.maps.Animation.DROP});
     var markers = [];
     markers.push(marker);
     markers.push(marker2);
@@ -46,13 +46,6 @@ function initMap() {
             selectedMarker = markers[i];
             main.innerHTML = addInfo();
             document.getElementById('info').scrollIntoView();
-        });
-        markers[i].addListener('mouseover', function() {
-            infowindow.open(map, this);
-        });
-
-        markers[i].addListener('mouseout', function() {
-            infowindow.close();
         });
     }
 }
@@ -70,7 +63,7 @@ function addInfo () {
             <h2>25 zł</h2>
             <hr>
             <h1>Instrukcja zadania<h1>
-            <h2>Tło biznesowe</h2>
+            <h2>Tło biznesowe test</h2>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</h3>
             <hr>
         </div>
