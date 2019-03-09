@@ -18,7 +18,7 @@ html, body, #map, #mainDiv {
 }
 
 .text-header {
-    font-size: calc(3vw + 3vh + 1vmin);
+    font-size: calc(2vw + 2vh + 1vmin);
 }
 
 #header {
