@@ -55,8 +55,8 @@ function initMap() {
 }
 
 function clearHeader () {
-    let element = document.getElementById("helpText");
-    element.classList.remove("head-css");
+    let element = document.querySelector("#helpText");
+    element.style.display = 'none';
 }
 
 function addInfo () {
