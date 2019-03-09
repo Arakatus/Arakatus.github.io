@@ -55,9 +55,12 @@ function initMap() {
 }
 
 function clearHeader () {
-    header.classList.remove("shadow");
-    header.classList.remove("head-css");
-    header.className = 'className';
+    // This will disable all the children of the div
+    var nodes = header.getElementsByTagName('*');
+    console.log(nodes.length);
+    for(var i = 0; i < nodes.length; i++){
+        nodes[i].disabled = true;
+    }
 }
 
 function addInfo () {
