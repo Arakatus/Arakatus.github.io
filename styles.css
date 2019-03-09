@@ -20,7 +20,7 @@ html, body, #map, #mainDiv {
 }
 
 .text-header {
-    font-size: 3.2vw;
+    font-size: calc(4vw + 4vh + 2vmin);
 }
 
 #header {
