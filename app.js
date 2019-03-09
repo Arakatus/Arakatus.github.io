@@ -50,7 +50,7 @@ function initMap() {
         content: addInfo()
     });
     for (let i = 0; i < markers.length; ++i) {
-        markers[i].addListener('click', function() {
+        markers[i].on('click', function() {
             var nodes = document.getElementById("header").getElementsByTagName('*');
             for(var i = 0; i < nodes.length; i++) {
                 nodes[i].disabled = true;
@@ -61,12 +61,16 @@ function initMap() {
             document.getElementById('info').scrollIntoView();*/
             infoWindow.open(map, markers[i]);
         });
+
+        marker[i].on('popupclose', function(e) {
+            console.log('test');
+        });
     }
 }
 
 function addInfo () {
     return `
-        <div id="info" class="shadow">
+        <div id="info">
             <h1>Nazwa sklepu</h1>
             <h2>Zabka</h2>
             <hr>
