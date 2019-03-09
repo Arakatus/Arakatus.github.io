@@ -50,7 +50,7 @@ function initMap() {
         content: addInfo()
     });
     for (let i = 0; i < markers.length; ++i) {
-        markers[i].on('click', function() {
+        markers[i].addListener('click', function() {
             var nodes = document.getElementById("header").getElementsByTagName('*');
             for(var i = 0; i < nodes.length; i++) {
                 nodes[i].disabled = true;
@@ -62,7 +62,7 @@ function initMap() {
             infoWindow.open(map, markers[i]);
         });
 
-        marker[i].on('popupclose', function(e) {
+        marker[i].addListener('popupclose', function(e) {
             console.log('test');
         });
     }
