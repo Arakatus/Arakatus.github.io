@@ -29,9 +29,9 @@ function initMap() {
         disableDefaultUI: true,
         zoomControl: false,
         mapTypeControl: false,
-        scaleControl: true,
-        streetViewControl: true,
-        rotateControl: true,
+        scaleControl: false,
+        streetViewControl: false,
+        rotateControl: false,
         fullscreenControl: false
     });
 
