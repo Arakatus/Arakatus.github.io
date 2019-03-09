@@ -1,4 +1,3 @@
-const header = document.getElementById('helpText');
 let map;
 let selectedMarker;
 let infoWindow;
