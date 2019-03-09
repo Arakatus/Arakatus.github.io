@@ -77,5 +77,6 @@ function addInfo () {
 }
 
 function bookTask () {
+    infoWindow.close();
     alert('Zadanie zostalo zarezerwowane!');
 }
