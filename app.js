@@ -55,9 +55,7 @@ function initMap() {
 }
 
 function clearHeader () {
-    header.innerHTML = `
-        <div></div>
-    `;
+    header.innerHTML = ``;
 }
 
 function addInfo () {
