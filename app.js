@@ -51,6 +51,10 @@ function initMap() {
     });
     for (let i = 0; i < markers.length; ++i) {
         markers[i].addListener('click', function() {
+            var nodes = document.getElementById("header").getElementsByTagName('*');
+            for(var i = 0; i < nodes.length; i++){
+                nodes[i].disabled = true;
+            }
             map.setZoom(14);
             selectedMarker = markers[i];
             /*main.innerHTML = addInfo();
@@ -83,6 +87,10 @@ function addInfo () {
 }
 
 function bookTask () {
+    var nodes = document.getElementById("header").getElementsByTagName('*');
+    for(var i = 0; i < nodes.length; i++){
+        nodes[i].disabled = false;
+    }
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     alert('Zadanie zostalo zarezerwowane!');
