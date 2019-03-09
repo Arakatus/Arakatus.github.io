@@ -1,4 +1,4 @@
-const header = document.getElementById('header');
+const header = document.getElementById('helpText');
 let map;
 let selectedMarker;
 let infoWindow;
