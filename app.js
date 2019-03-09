@@ -55,6 +55,8 @@ function initMap() {
 }
 
 function clearHeader () {
+    header.classList.remove("shadow");
+    header.classList.remove("head-css");
     header.className = 'className';
 }
 
