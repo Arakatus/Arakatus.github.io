@@ -49,7 +49,7 @@ function initMap() {
             selectedMarker = markers[i];
             /*main.innerHTML = addInfo();
             document.getElementById('info').scrollIntoView();*/
-            infowindow.open(map, markers[i]);
+            infoWindow.open(map, markers[i]);
         });
     }
 }
