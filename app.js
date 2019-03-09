@@ -55,13 +55,8 @@ function initMap() {
 }
 
 function clearHeader () {
-    // This will disable all the children of the div
-    var nodes = header.getElementsByTagName('*');
-    console.log(nodes.length);
-    for(var i = 0; i < nodes.length; i++){
-        nodes[i].disabled = true;
-    }
-    header.disabled = true;
+    let element = document.getElementById("helpText");
+    element.classList.add("disable");
 }
 
 function addInfo () {
