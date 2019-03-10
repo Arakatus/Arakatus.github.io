@@ -19,28 +19,7 @@ let mapOptionsDisabled = {
     disableDoubleClickZoom: true
 };
 
-window.addEventListener('beforeinstallprompt', function(event) {
-    console.log('test1');
-    event.preventDefault();
-    installPromptEvent = event;
-});
-
-function callInstallPrompt() {
-    // We can't fire the dialog before preventing default browser dialog
-    if (installPromptEvent !== undefined) {
-        console.log('test2');
-        installPromptEvent.prompt();
-    } else {
-        console.log('test3')
-    }
-}
-
 /////test///////
-
-
-//request for location
-
-
 //function that gets the location and returns it
 /*function getUserLocation() {
     if(navigator.geolocation) {
@@ -77,7 +56,6 @@ window.addEventListener('load', async e => {
 });
 
 function initMap() {
-    callInstallPrompt();
     //getUserLocation();
 
     map = new google.maps.Map(document.getElementById('map'), {
