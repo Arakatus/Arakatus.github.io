@@ -79,7 +79,7 @@ function initMap() {
     //getUserLocation();
 
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15, center: userLocation,
+        zoom: 15, center: {lat: 52.215252, lng: 20.969019},
         gestureHandling: "greedy",
         minZoom: 1,
         disableDefaultUI: true,
