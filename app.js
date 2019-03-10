@@ -1,4 +1,4 @@
-let map, selectedMarker, infoWindow, userLocation;
+let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
 let mapOptionsNormal = {
     disableDefaultUI: true,
     zoomControl: false,
@@ -19,6 +19,20 @@ let mapOptionsDisabled = {
     disableDoubleClickZoom: true
 };
 
+// global variable for the event object
+
+window.addEventListener('beforeinstallprompt', function(event) {
+    event.preventDefault();
+    installPromptEvent = event;
+});
+
+function callInstallPrompt() {
+    // We can't fire the dialog before preventing default browser dialog
+    if (installPromptEvent !== undefined) {
+        installPromptEvent.prompt();
+    }
+}
+
 /////test///////
 
 
@@ -26,7 +40,7 @@ let mapOptionsDisabled = {
 
 
 //function that gets the location and returns it
-function getUserLocation() {
+/*function getUserLocation() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -39,7 +53,7 @@ function showPosition(position) {
         lat: position.coords.latitude,
         lng: position.coords.longitude
     };
-}
+}*/
 ////test/////////
 
 window.addEventListener('load', async e => {
@@ -61,10 +75,11 @@ window.addEventListener('load', async e => {
 });
 
 function initMap() {
-    getUserLocation();
+    callInstallPrompt();
+    //getUserLocation();
 
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12, center: userLocation,
+        zoom: 15, center: userLocation,
         gestureHandling: "greedy",
         minZoom: 1,
         disableDefaultUI: true,
