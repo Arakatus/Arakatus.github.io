@@ -16,6 +16,10 @@ html, body, #map, #mainDiv {
     background-color: white;
 }
 
+.inline {
+    display:inline-block;
+}
+
 .head-css {
     overflow: hidden;
     background-color: white;
