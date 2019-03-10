@@ -36,8 +36,8 @@ function getUserLocation() {
 //function that retrieves the position
 function showPosition(position) {
     userLocation = {
-        longitude: position.coords.longitude,
-        latitude: position.coords.latitude
+        lat: position.coords.longitude,
+        lng: position.coords.latitude
     };
 }
 ////test/////////
@@ -64,7 +64,7 @@ function initMap() {
     getUserLocation();
 
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16, center: {lat: userLocation.latitude, lng: userLocation.longitude},
+        zoom: 16, center: userLocation,
         gestureHandling: "greedy",
         minZoom: 1,
         disableDefaultUI: true,
