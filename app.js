@@ -123,6 +123,7 @@ function addInfo () {
 }
 
 function bookTask () {
+    enableMap();
     showHeader();
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
