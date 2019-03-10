@@ -96,8 +96,11 @@ function initMap() {
 function addInfo () {
     return `
         <div id="info" class="info">
-            <h1>Nazwa sklepu</h1>
-            <h2>Zabka</h2>
+            <div>
+                <img src="images/icons/testIcon.png" alt="icon">
+                <h1>Nazwa sklepu</h1>
+                <h2>Zabka</h2>
+            </div>
             <hr>
             <h1>Adres</h1>
             <h2>Mazowiecka 8, Warszawa</h2>
