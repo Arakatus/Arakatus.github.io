@@ -36,8 +36,8 @@ function getUserLocation() {
 //function that retrieves the position
 function showPosition(position) {
     userLocation = {
-        lat: position.coords.longitude,
-        lng: position.coords.latitude
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
     };
 }
 ////test/////////
