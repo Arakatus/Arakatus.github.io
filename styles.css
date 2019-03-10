@@ -20,6 +20,10 @@ html, body, #map, #mainDiv {
     display:inline-block;
 }
 
+.space-right {
+    margin-right: 10px;
+}
+
 .head-css {
     overflow: hidden;
     background-color: white;

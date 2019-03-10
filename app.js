@@ -97,7 +97,7 @@ function addInfo () {
     return `
         <div id="info" class="info">
             <div>
-                <div class="inline">
+                <div class="inline space-right">
                     <img src="images/icons/testIcon60.png" alt="icon">
                 </div>
                 <div class="inline">
