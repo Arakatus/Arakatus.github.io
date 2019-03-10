@@ -2,6 +2,25 @@ let map;
 let selectedMarker;
 let infoWindow;
 
+var config = {
+    apiKey: "AIzaSyAg29xSz_IaKpmb5bWpT9F4TC0whGO8kH4",
+    authDomain: "confident-58909.firebaseapp.com",
+    databaseURL: "https://confident-58909.firebaseio.com",
+    projectId: "confident-58909",
+    storageBucket: "confident-58909.appspot.com",
+    messagingSenderId: "1076549656704"
+  };
+
+firebase.initializeApp(config);
+
+var database = firebase.database();
+ 
+function getData() {
+    database.once('value').then(function(snapshot) {
+        console.log(snapshot.val());
+    }
+}
+
 window.addEventListener('load', async e => {
     if ("serviceWorker" in navigator) {
         if (navigator.serviceWorker.controller) {
