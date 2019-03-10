@@ -1,4 +1,4 @@
-html, body, #map, #mainDiv {
+html, body, #mainDiv {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -6,14 +6,12 @@ html, body, #map, #mainDiv {
 }
 #map {
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 #mainDiv {
     position: relative;
-}
-
-.info {
-    background-color: white;
 }
 
 .inline {
@@ -21,7 +19,17 @@ html, body, #map, #mainDiv {
 }
 
 .space-right {
-    margin-right: 10px;
+    margin-right: 20px;
+}
+
+.info {
+    height: 60%;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    z-index: 99;
+    overflow:auto;
+    bottom: 0%;
 }
 
 .not-bold {

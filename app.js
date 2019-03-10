@@ -95,30 +95,32 @@ function initMap() {
 
 function addInfo () {
     return `
-        <div id="info" class="info">
+        <div class="info">
             <div>
-                <div class="inline space-right">
-                    <img src="images/icons/testIcon60.png" alt="icon">
+                <div>
+                    <div class="inline space-right">
+                        <img src="images/icons/testIcon60.png" alt="icon">
+                    </div>
+                    <div class="inline">
+                        <h1>Nazwa sklepu</h1>
+                        <h2 class="not-bold">Zabka</h2>
+                    </div>
                 </div>
-                <div class="inline">
-                    <h1>Nazwa sklepu</h1>
-                    <h2 class="not-bold">Zabka</h2>
-                </div>
+                <hr>
+                <h1>Adres</h1>
+                <h2 class="not-bold">Mazowiecka 8, Warszawa</h2>
+                <hr>
+                <h1>Wynagrodzenie</h1>
+                <h2 class="not-bold">25 zł</h2>
+                <hr>
+                <h1>Instrukcja zadania<h1>
+                <h2 class="not-bold">Szczegółowy opis</h2>
+                <h3 class="not-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</h3>
+                <hr>
             </div>
-            <hr>
-            <h1>Adres</h1>
-            <h2 class="not-bold">Mazowiecka 8, Warszawa</h2>
-            <hr>
-            <h1>Wynagrodzenie</h1>
-            <h2 class="not-bold">25 zł</h2>
-            <hr>
-            <h1>Instrukcja zadania<h1>
-            <h2 class="not-bold">Tło biznesowe</h2>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</h3>
-            <hr>
+            <br/>
+            <button class="small blue button" onclick="bookTask()">WYKONAJ ZADANIE</button>
         </div>
-        <br/>
-        <button class="small blue button" onclick="bookTask()">WYKONAJ ZADANIE</button>
     `;
 }
 
@@ -135,7 +137,9 @@ function addMarkerListener(marker) {
         disableMap();
         clearHeader();
         selectedMarker = this;
-        infoWindow.open(map, this);
+        //infoWindow.open(map, this);
+        let element = document.querySelector("#info");
+        element.innerHTML = addInfo();
     });
 }
 
