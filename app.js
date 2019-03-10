@@ -1,6 +1,23 @@
-let map;
-let selectedMarker;
-let infoWindow;
+let map, selectedMarker, infoWindow;
+let mapOptionsNormal = {
+    disableDefaultUI: true,
+    zoomControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    streetViewControl: false,
+    rotateControl: false,
+    fullscreenControl: false,
+    clickableIcons: false,
+    draggable: true,
+    scrollwheel: true,
+    disableDoubleClickZoom: false
+};
+let mapOptionsDisabled = {
+    draggable: false,
+    zoomControl: false,
+    scrollwheel: false,
+    disableDoubleClickZoom: true
+};
 
 window.addEventListener('load', async e => {
     if ("serviceWorker" in navigator) {
@@ -45,7 +62,8 @@ function initMap() {
         content: addInfo()
     });
 
-    google.maps.event.addListener(infoWindow,'closeclick',function(){
+    google.maps.event.addListener(infoWindow,'closeclick',function() {
+        enableMap();
         showHeader();
     });
 
@@ -53,16 +71,6 @@ function initMap() {
     addMarkerListener(marker2);
     addMarkerListener(marker3);
     addMarkerListener(marker4);
-}
-
-function clearHeader () {
-    let element = document.querySelector("#helpText");
-    element.style.display = 'none';
-}
-
-function showHeader () {
-    let element = document.querySelector("#helpText");
-    element.style.display = '';
 }
 
 function addInfo () {
@@ -96,8 +104,27 @@ function bookTask () {
 
 function addMarkerListener(marker) {
     marker.addListener('click', function() {
+        disableMap();
         clearHeader();
         selectedMarker = this;
         infoWindow.open(map, this);
     });
+}
+
+function clearHeader () {
+    let element = document.querySelector("#helpText");
+    element.style.display = 'none';
+}
+
+function showHeader () {
+    let element = document.querySelector("#helpText");
+    element.style.display = '';
+}
+
+function disableMap () {
+    map.setOptions(mapOptionsDisabled);
+}
+
+function enableMap () {
+    map.setOptions(mapOptionsNormal);
 }
