@@ -1,4 +1,4 @@
-let map, selectedMarker, infoWindow;
+let map, selectedMarker, infoWindow, userLocation;
 let mapOptionsNormal = {
     disableDefaultUI: true,
     zoomControl: false,
@@ -21,8 +21,12 @@ let mapOptionsDisabled = {
 
 /////test///////
 
+
+//request for location
+
+
 //function that gets the location and returns it
-function getLocation() {
+function getUserLocation() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -31,14 +35,11 @@ function getLocation() {
 }
 //function that retrieves the position
 function showPosition(position) {
-    let location = {
+    userLocation = {
         longitude: position.coords.longitude,
         latitude: position.coords.latitude
     };
-    console.log(location);
 }
-//request for location
-getLocation();
 ////test/////////
 
 window.addEventListener('load', async e => {
@@ -60,8 +61,10 @@ window.addEventListener('load', async e => {
 });
 
 function initMap() {
+    getUserLocation();
+
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13, center: {lat: 52.237049, lng: 21.017532},
+        zoom: 16, center: {lat: userLocation.latitude, lng: userLocation.longitude},
         gestureHandling: "greedy",
         minZoom: 1,
         disableDefaultUI: true,
