@@ -24,6 +24,10 @@ html, body, #map, #mainDiv {
     margin-right: 10px;
 }
 
+.not-bold {
+    font-weight:normal;
+}
+
 .head-css {
     overflow: hidden;
     background-color: white;

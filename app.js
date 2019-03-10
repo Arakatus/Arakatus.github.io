@@ -102,18 +102,18 @@ function addInfo () {
                 </div>
                 <div class="inline">
                     <h1>Nazwa sklepu</h1>
-                    <h2>Zabka</h2>
+                    <h2 class="not-bold">Zabka</h2>
                 </div>
             </div>
             <hr>
             <h1>Adres</h1>
-            <h2>Mazowiecka 8, Warszawa</h2>
+            <h2 class="not-bold">Mazowiecka 8, Warszawa</h2>
             <hr>
             <h1>Wynagrodzenie</h1>
-            <h2>25 zł</h2>
+            <h2 class="not-bold">25 zł</h2>
             <hr>
             <h1>Instrukcja zadania<h1>
-            <h2>Tło biznesowe</h2>
+            <h2 class="not-bold">Tło biznesowe</h2>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</h3>
             <hr>
         </div>
