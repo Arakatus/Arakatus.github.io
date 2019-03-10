@@ -98,7 +98,7 @@ function addInfo () {
         <div id="info" class="info">
             <div>
                 <div class="inline">
-                    <img src="images/icons/testIcon.png" alt="icon">
+                    <img src="images/icons/testIcon60.png" alt="icon">
                 </div>
                 <div class="inline">
                     <h1>Nazwa sklepu</h1>
