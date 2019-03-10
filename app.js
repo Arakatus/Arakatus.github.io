@@ -19,9 +19,8 @@ let mapOptionsDisabled = {
     disableDoubleClickZoom: true
 };
 
-// global variable for the event object
-
 window.addEventListener('beforeinstallprompt', function(event) {
+    console.log('test1');
     event.preventDefault();
     installPromptEvent = event;
 });
@@ -29,7 +28,10 @@ window.addEventListener('beforeinstallprompt', function(event) {
 function callInstallPrompt() {
     // We can't fire the dialog before preventing default browser dialog
     if (installPromptEvent !== undefined) {
+        console.log('test2');
         installPromptEvent.prompt();
+    } else {
+        console.log('test3')
     }
 }
 
