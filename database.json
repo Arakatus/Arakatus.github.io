@@ -1,0 +1,47 @@
+{
+    "tasks" : {
+      "1" : {
+        "lng" : "http://graph.facebook.com/1331363076930488/picture?type=large",
+        "lat" : "laka",
+        "place" : "Zabka",
+        "adress" : "Mazowiecka 8, Warssawa",
+        "stake" : 25,
+        "instruction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor."
+      },
+      "-L5-B9-JavsYmL1y1cNS" : {
+        "avatarImageUrl" : "http://graph.facebook.com/1331363076930488/picture?type=large",
+        "caption" : "chuj",
+        "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/social-f1a74.appspot.com/o/post_pics%2F11160782-5610-4F7C-9456-15020686F9F9?alt=media&token=45201ab7-de81-4295-ab82-570614d8acb5",
+        "likes" : 2,
+        "nickname" : "Maciej"
+      },
+      "-L5-Bc2XAaATw1E3Wl2t" : {
+        "avatarImageUrl" : "https://firebasestorage.googleapis.com/v0/b/social-f1a74.appspot.com/o/avatar_pics%2F1A9B5EDE-12F9-4CD3-A067-B6000F466706?alt=media&token=1c2163e6-b4b4-4ea4-b85b-7db6ad96ae44",
+        "caption" : "chssda",
+        "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/social-f1a74.appspot.com/o/post_pics%2F4809CBDC-33EE-4F2F-B588-E77207E7DB16?alt=media&token=e264cfe1-3aed-4533-8460-56cbb7e8b82e",
+        "likes" : 1,
+        "nickname" : "knaga"
+      },
+      "name" : "nil"
+    },
+    "users" : {
+      "2i27X8Aip3cHV4mK1Y4Rq1614s22" : {
+        "avatarImageUrl" : "http://graph.facebook.com/1331363076930488/picture?type=large",
+        "likes" : {
+          "-KrX8BH8bXoBab0YFOTe" : true,
+          "-L5-B9-JavsYmL1y1cNS" : true
+        },
+        "nickname" : "Maciej"
+      },
+      "chWtPWoHFWg1YURYDay4mFjcBpm2" : {
+        "avatarImageUrl" : "https://firebasestorage.googleapis.com/v0/b/social-f1a74.appspot.com/o/avatar_pics%2F1A9B5EDE-12F9-4CD3-A067-B6000F466706?alt=media&token=1c2163e6-b4b4-4ea4-b85b-7db6ad96ae44",
+        "likes" : {
+          "-KrX8BH8bXoBab0YFOTe" : true,
+          "-L5-B9-JavsYmL1y1cNS" : true,
+          "-L5-Bc2XAaATw1E3Wl2t" : true
+        },
+        "nickname" : "knaga"
+      }
+    }
+  }
+  
