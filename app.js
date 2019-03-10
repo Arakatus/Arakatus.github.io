@@ -97,7 +97,9 @@ function addInfo () {
     return `
         <div id="info" class="info">
             <div>
-                <img src="images/icons/testIcon.png" alt="icon" class="inline">
+                <div class="inline">
+                    <img src="images/icons/testIcon.png" alt="icon">
+                </div>
                 <div class="inline">
                     <h1>Nazwa sklepu</h1>
                     <h2>Zabka</h2>
