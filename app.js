@@ -113,7 +113,7 @@ function addInfo () {
                         <img src="images/icons/testIcon60.png" alt="icon">
                     </div>
                     <div class="inline">
-                        <h1>Nazwa sklepu</h1>
+                        <h1>Nazwa sklepu tst</h1>
                         <h2 class="not-bold">Zabka</h2>
                     </div>
                 </div>
