@@ -12,7 +12,6 @@ html, body, #mainDiv {
 
 #mainDiv {
     position: absolute;
-    overflow: auto;
 }
 
 .inline {
@@ -55,7 +54,7 @@ html, body, #mainDiv {
 }
 
 html, body {
-    overflow: hidden
+    overflow: auto;
 }
 
 .button::-moz-focus-inner{
