@@ -12,14 +12,7 @@ var config = {
   };
 
 firebase.initializeApp(config);
-
-var database = firebase.database();
  
-function getData() {
-    database.once('value').then(function(snapshot) {
-        console.log(snapshot.val());
-    }
-}
 
 window.addEventListener('load', async e => {
     if ("serviceWorker" in navigator) {
@@ -37,7 +30,9 @@ window.addEventListener('load', async e => {
         }
     }
     initMap();
+    getData();
 });
+
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -72,6 +67,11 @@ function initMap() {
     addMarkerListener(marker2);
     addMarkerListener(marker3);
     addMarkerListener(marker4);
+}
+
+function getData() {
+    firebase.database.once('value').then(function(snapshot) {
+        console.log(snapshot.val())});
 }
 
 function clearHeader () {
