@@ -1,6 +1,7 @@
 let map;
 let selectedMarker;
 let infoWindow;
+var tasks = new Array();
 
 var config = {
     apiKey: "AIzaSyAg29xSz_IaKpmb5bWpT9F4TC0whGO8kH4",
@@ -13,7 +14,6 @@ var config = {
 
 firebase.initializeApp(config);
  
-
 window.addEventListener('load', async e => {
     if ("serviceWorker" in navigator) {
         if (navigator.serviceWorker.controller) {
@@ -29,8 +29,8 @@ window.addEventListener('load', async e => {
                 });
         }
     }
-    initMap();
     getData();
+    initMap();
 });
 
 
@@ -49,11 +49,13 @@ function initMap() {
         clickableIcons: false
     });
 
+    console.log(tasks.length);
+
     //markers
-    var marker1 = new google.maps.Marker({position: {lat: 50.454, lng: 30.523}, map: map, animation: google.maps.Animation.DROP});
-    var marker2 = new google.maps.Marker({position: {lat: 50.405956, lng: 30.671791}, map: map, animation: google.maps.Animation.DROP});
-    var marker3 = new google.maps.Marker({position: {lat: 52.2477331, lng: 21.0136079}, map: map, animation: google.maps.Animation.DROP});
-    var marker4 = new google.maps.Marker({position: {lat: 52.215252, lng: 20.969019}, map: map, animation: google.maps.Animation.DROP});
+    // var marker1 = new google.maps.Marker({position: {lat: 50.454, lng: 30.523}, map: map, animation: google.maps.Animation.DROP});
+    // var marker2 = new google.maps.Marker({position: {lat: 50.405956, lng: 30.671791}, map: map, animation: google.maps.Animation.DROP});
+    // var marker3 = new google.maps.Marker({position: {lat: 52.2477331, lng: 21.0136079}, map: map, animation: google.maps.Animation.DROP});
+    // var marker4 = new google.maps.Marker({position: {lat: 52.215252, lng: 20.969019}, map: map, animation: google.maps.Animation.DROP});
 
     infoWindow = new google.maps.InfoWindow({
         content: addInfo()
@@ -63,15 +65,22 @@ function initMap() {
         showHeader();
     });
 
-    addMarkerListener(marker1);
-    addMarkerListener(marker2);
-    addMarkerListener(marker3);
-    addMarkerListener(marker4);
+    // addMarkerListener(marker1);
+    // addMarkerListener(marker2);
+    // addMarkerListener(marker3);
+    // addMarkerListener(marker4);
 }
 
 function getData() {
-    firebase.database.once('value').then(function(snapshot) {
-        console.log(snapshot.val())});
+    var taskid = 1;
+    firebase.database().ref('/tasks/').once('value').then(function(snapshot) {
+        //console.log(snapshot.val()task1);
+        while (snapshot.val()['task' + taskid]) {
+            tasks.push(snapshot.val()['task' + taskid]);
+            taskid++
+        }
+    });
+    initMap();
 }
 
 function clearHeader () {
