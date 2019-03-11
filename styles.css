@@ -8,10 +8,12 @@ html, body, #mainDiv {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 
 #mainDiv {
-    position: relative;
+    position: absolute;
+    overflow: auto;
 }
 
 .inline {

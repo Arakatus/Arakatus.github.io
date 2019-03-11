@@ -1,4 +1,5 @@
 let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
+let infoWindowOpened = false;
 let mapOptionsNormal = {
     disableDefaultUI: true,
     zoomControl: false,
@@ -56,6 +57,9 @@ window.addEventListener('load', async e => {
 });
 
 function initMap() {
+    let element = document.querySelector("#info");
+    element.innerHTML = addInfo();
+    element.style.display = 'none';
     //getUserLocation();
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -70,6 +74,13 @@ function initMap() {
         rotateControl: false,
         fullscreenControl: false,
         clickableIcons: false
+    });
+
+    google.maps.event.addListener(map, 'click', function(event) {
+        if (infoWindowOpened) {
+            disableInfo();
+            enableMap();
+        }
     });
 
     //markers
@@ -129,6 +140,7 @@ function bookTask () {
     showHeader();
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
+    disableInfo();
     alert('Zadanie zostalo zarezerwowane!');
 }
 
@@ -138,8 +150,7 @@ function addMarkerListener(marker) {
         clearHeader();
         selectedMarker = this;
         //infoWindow.open(map, this);
-        let element = document.querySelector("#info");
-        element.innerHTML = addInfo();
+        enableInfo();
     });
 }
 
@@ -150,6 +161,18 @@ function clearHeader () {
 
 function showHeader () {
     let element = document.querySelector("#helpText");
+    element.style.display = '';
+}
+
+function disableInfo () {
+    infoWindowOpened = false;
+    let element = document.querySelector("#info");
+    element.style.display = 'none';
+}
+
+function enableInfo () {
+    infoWindowOpened = true;
+    let element = document.querySelector("#info");
     element.style.display = '';
 }
 
