@@ -8,7 +8,6 @@ html, body, #mainDiv {
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: auto;
 }
 
 #mainDiv {
@@ -30,7 +29,6 @@ html, body, #mainDiv {
     background-color: white;
     position: absolute;
     z-index: 99;
-    overflow:auto;
     bottom: 0%;
 }
 
