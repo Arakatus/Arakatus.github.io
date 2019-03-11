@@ -30,7 +30,6 @@ window.addEventListener('load', async e => {
         }
     }
     getData();
-    initMap();
 });
 
 
@@ -49,13 +48,12 @@ function initMap() {
         clickableIcons: false
     });
 
-    console.log(tasks.length);
-
-    //markers
-    // var marker1 = new google.maps.Marker({position: {lat: 50.454, lng: 30.523}, map: map, animation: google.maps.Animation.DROP});
-    // var marker2 = new google.maps.Marker({position: {lat: 50.405956, lng: 30.671791}, map: map, animation: google.maps.Animation.DROP});
-    // var marker3 = new google.maps.Marker({position: {lat: 52.2477331, lng: 21.0136079}, map: map, animation: google.maps.Animation.DROP});
-    // var marker4 = new google.maps.Marker({position: {lat: 52.215252, lng: 20.969019}, map: map, animation: google.maps.Animation.DROP});
+    var marker;
+    for (var i = 0; i < tasks.length; i++) {
+        marker = new google.maps.Marker({position: {lat: tasks[i].lat, lng: tasks[i].lng}, map: map, animation: google.maps.Animation.DROP});
+        marker.task = i;
+        addMarkerListener(marker);
+    }
 
     infoWindow = new google.maps.InfoWindow({
         content: addInfo()
@@ -65,10 +63,6 @@ function initMap() {
         showHeader();
     });
 
-    // addMarkerListener(marker1);
-    // addMarkerListener(marker2);
-    // addMarkerListener(marker3);
-    // addMarkerListener(marker4);
 }
 
 function getData() {
@@ -79,8 +73,8 @@ function getData() {
             tasks.push(snapshot.val()['task' + taskid]);
             taskid++
         }
+        initMap();
     });
-    initMap();
 }
 
 function clearHeader () {
@@ -126,6 +120,7 @@ function addMarkerListener(marker) {
     marker.addListener('click', function() {
         clearHeader();
         selectedMarker = this;
+        console.log(tasks[marker.task]);
         infoWindow.open(map, this);
     });
 }
