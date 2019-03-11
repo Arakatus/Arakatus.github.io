@@ -1,0 +1,23 @@
+{
+    "tasks" : {
+      "task1" : {
+        "lng" : 52,
+        "lat" : 21,
+        "place" : "Zabka",
+        "adress" : "Mazowiecka 8, Warssawa",
+        "stake" : 25,
+        "instruction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.",
+        "booked": false
+      },
+      "task2" : {
+        "lng" : 52,
+        "lat" : 21,
+        "place" : "Carf",
+        "adress" : "Skoczylasa 8, Warssawa",
+        "stake" : 30,
+        "instruction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.",
+        "booked": false
+      }
+    }
+  }
+  

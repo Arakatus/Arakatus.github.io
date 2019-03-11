@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
 let infoWindowOpened = false;
 let mapOptionsNormal = {
@@ -37,7 +38,25 @@ function showPosition(position) {
     };
 }*/
 ////test/////////
+=======
+let map;
+let selectedMarker;
+let infoWindow;
+var tasks = new Array();
+//hbhb
+>>>>>>> database
 
+var config = {
+    apiKey: "AIzaSyAg29xSz_IaKpmb5bWpT9F4TC0whGO8kH4",
+    authDomain: "confident-58909.firebaseapp.com",
+    databaseURL: "https://confident-58909.firebaseio.com",
+    projectId: "confident-58909",
+    storageBucket: "confident-58909.appspot.com",
+    messagingSenderId: "1076549656704"
+  };
+
+firebase.initializeApp(config);
+ 
 window.addEventListener('load', async e => {
     if ("serviceWorker" in navigator) {
         if (navigator.serviceWorker.controller) {
@@ -53,8 +72,9 @@ window.addEventListener('load', async e => {
                 });
         }
     }
-    initMap();
+    getData();
 });
+
 
 function initMap() {
     let element = document.querySelector("#info");
@@ -76,6 +96,7 @@ function initMap() {
         clickableIcons: false
     });
 
+<<<<<<< HEAD
     google.maps.event.addListener(map, 'click', function(event) {
         if (infoWindowOpened) {
             disableInfo();
@@ -89,6 +110,14 @@ function initMap() {
     var marker2 = new google.maps.Marker({position: {lat: 50.405956, lng: 30.671791}, map: map, animation: google.maps.Animation.DROP});
     var marker3 = new google.maps.Marker({position: {lat: 52.2477331, lng: 21.0136079}, map: map, animation: google.maps.Animation.DROP});
     var marker4 = new google.maps.Marker({position: {lat: 52.215252, lng: 20.969019}, map: map, animation: google.maps.Animation.DROP});
+=======
+    var marker;
+    for (var i = 0; i < tasks.length; i++) {
+        marker = new google.maps.Marker({position: {lat: tasks[i].lat, lng: tasks[i].lng}, map: map, animation: google.maps.Animation.DROP});
+        marker.task = i;
+        addMarkerListener(marker);
+    }
+>>>>>>> database
 
     infoWindow = new google.maps.InfoWindow({
         content: addInfo()
@@ -99,10 +128,18 @@ function initMap() {
         showHeader();
     });
 
-    addMarkerListener(marker1);
-    addMarkerListener(marker2);
-    addMarkerListener(marker3);
-    addMarkerListener(marker4);
+}
+
+function getData() {
+    var taskid = 1;
+    firebase.database().ref('/tasks/').once('value').then(function(snapshot) {
+        //console.log(snapshot.val()task1);
+        while (snapshot.val()['task' + taskid]) {
+            tasks.push(snapshot.val()['task' + taskid]);
+            taskid++
+        }
+        initMap();
+    });
 }
 
 function addInfo () {
@@ -150,8 +187,13 @@ function addMarkerListener(marker) {
         disableMap();
         clearHeader();
         selectedMarker = this;
+<<<<<<< HEAD
         //infoWindow.open(map, this);
         enableInfo();
+=======
+        console.log(tasks[marker.task]);
+        infoWindow.open(map, this);
+>>>>>>> database
     });
 }
 
