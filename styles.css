@@ -44,11 +44,16 @@ html, body, #mainDiv {
     font-weight: 900;
     font-size: 25px;
     color: white;
+    display: block;
+    width: 100px;
+    height: 100%;
+    margin: 0 auto;
 }
 
 .login_submit_div {
-    margin-top: 54%;
-    height: 20%;
+    position: fixed;
+    bottom: 0%;
+    height: 10%;
     width: 100%;
     text-align: center;
     background-color: green;

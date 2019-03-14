@@ -29,7 +29,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
     </head>
     <body>
-       <div class="login_screen" scr>
+       <div class="login_screen">
            <div class="login-text-div">
                <div class="login_text">
                    <span>Hustle App</span>
@@ -41,11 +41,9 @@
                     <br/>
                     <input type="text" id="email" value="" size="40">
                 </div>
-               <div class="login_submit_div">
-                   <div onclick="submit()">
-                       <span class="login_submit_text">Submit</span>
-                   </div>
-               </div>
+                <div onclick="submit()" class="login_submit_div">
+                    <span class="login_submit_text">Submit</span>
+                </div>
            </div>
        </div>
         <script src="app.js"></script>
