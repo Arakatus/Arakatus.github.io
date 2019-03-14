@@ -48,6 +48,7 @@ html, body, #mainDiv {
     width: 100px;
     height: 100%;
     margin: 0 auto;
+    padding-top: 3%;
 }
 
 .login_submit_div {
