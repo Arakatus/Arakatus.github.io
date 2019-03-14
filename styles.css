@@ -22,6 +22,58 @@ html, body, #mainDiv {
     margin-right: 20px;
 }
 
+.login_screen {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    background-color: rgba(0, 0, 255, 1);
+}
+
+.login_text {
+    padding-top: 20%;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    color: white;
+}
+
+.login_submit_text {
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+}
+
+.login_submit_div {
+    margin-top: 54%;
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    background-color: green;
+    background-color: rgba(0, 128, 0, 1);
+}
+
+.login_text-small {
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    color: white;
+}
+
+.login-text-div {
+    width: 100%;
+    height: 50%;
+    text-align: center
+}
+
+.login-bottom-div {
+    width: 100%;
+    height: 50%;
+    text-align: center
+}
+
 .info {
     height: 40%;
     width: 100%;

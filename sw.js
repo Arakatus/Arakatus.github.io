@@ -5,6 +5,7 @@ const precacheFiles = [
     './images/icons',
     './index.html',
     './styles.css',
+    './Screens/main.html'
 ];
 
 self.addEventListener("install", function (event) {

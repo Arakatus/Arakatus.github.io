@@ -28,21 +28,26 @@
         <meta name="theme-color" content="#ffffff" />
         <meta name="apple-mobile-web-app-capable" content="yes">
     </head>
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
     <body>
-        <div id="mainDiv">
-            <div id="helpText" class="head-css shadow-under">
-                <h3 style="text-align: center">
-                    Wybierz zadanie
-                </h3>
-            </div>
-            <div id="map"></div>
-            <div id="info"></div>
-        </div>
+       <div class="login_screen" scr>
+           <div class="login-text-div">
+               <div class="login_text">
+                   <span>Hustle App</span>
+               </div>
+           </div>
+           <div class="login-bottom-div">
+                <div>
+                    <span class="login_text-small">Email:</span>
+                    <br/>
+                    <input type="text" id="email" value="" size="40">
+                </div>
+               <div class="login_submit_div">
+                   <div onclick="submit()">
+                       <span class="login_submit_text">Submit</span>
+                   </div>
+               </div>
+           </div>
+       </div>
         <script src="app.js"></script>
-        <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4c9WIt7XZww-c4PxtAKEn7Gy1ykeUTE0&callback=initMap">
-        </script>
     </body>
 </html>
