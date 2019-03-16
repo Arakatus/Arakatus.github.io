@@ -17,30 +17,6 @@ window.addEventListener('load', async e => {
     checkCookie();
 });
 
-function submit () {
-    let providedEmail = document.getElementById("email").value;
-    if (providedEmail != null && providedEmail !== '') {
-        if (validateEmail(providedEmail)) {
-            setCookie("email", providedEmail, 365);
-            checkCookie();
-        } else {
-            alert('Invalid Email!')
-        }
-    }
-}
-
-function validateEmail(email) {
-    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
-
-function setCookie(cname, cvalue, exdays) {
-    let d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    let expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
 function getCookie(cname) {
     let name = cname + "=";
     let ca = document.cookie.split(';');
@@ -60,5 +36,7 @@ function checkCookie() {
     let email = getCookie("email");
     if (email !== "") {
         document.location.href = url + 'Screens/main';
+    } else {
+        document.location.href = url + 'Screens/login';
     }
 }

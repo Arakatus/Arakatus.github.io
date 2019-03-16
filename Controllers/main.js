@@ -1,5 +1,5 @@
 let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
-let url = 'http://localhost:5000/';
+
 let infoWindowOpened = false;
 let mapOptionsNormal = {
     disableDefaultUI: true,
