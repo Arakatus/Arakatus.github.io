@@ -32,6 +32,25 @@ html, body, #mainDiv {
     background-color: rgba(0, 0, 255, 1);
 }
 
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select:focus,
+textarea {
+    font-size: 16px;
+}
+
 .login_text {
     padding-top: 20%;
     font-family: Arial, sans-serif;
@@ -49,7 +68,7 @@ html, body, #mainDiv {
     width: 100px;
     height: 100%;
     margin: 0 auto;
-    padding-top: 3%;
+    padding-top: 22px;
 }
 
 .login_submit_div {
