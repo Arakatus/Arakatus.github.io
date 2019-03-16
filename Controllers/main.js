@@ -216,8 +216,10 @@ function enableMap () {
 function checkCookie() {
     let email = getCookie("email");
     if (email !== "") {
+        console.log('test1');
         getData();
     } else {
+        console.log('test2');
         document.location.href = url + 'Screens/login';
     }
 }
