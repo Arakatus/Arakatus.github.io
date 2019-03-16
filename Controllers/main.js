@@ -2,6 +2,7 @@ let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
 let url = 'https://arakatus.github.io/';
 let infoWindowOpened = false;
 let mapOptionsNormal = {
+    minZoom: 2,
     disableDefaultUI: true,
     zoomControl: false,
     mapTypeControl: false,
@@ -65,7 +66,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 15, center: {lat: 52.215252, lng: 20.969019},
         gestureHandling: "greedy",
-        minZoom: 1,
+        minZoom: 2,
         disableDefaultUI: true,
         zoomControl: false,
         mapTypeControl: false,
@@ -83,12 +84,6 @@ function initMap() {
             showHeader();
         }
     });
-
-    //markers
-    /*let marker1 = new google.maps.Marker({position: {lat: 50.454, lng: 30.523}, map: map, animation: google.maps.Animation.DROP});
-    let marker2 = new google.maps.Marker({position: {lat: 50.405956, lng: 30.671791}, map: map, animation: google.maps.Animation.DROP});
-    let marker3 = new google.maps.Marker({position: {lat: 52.2477331, lng: 21.0136079}, map: map, animation: google.maps.Animation.DROP});
-    let marker4 = new google.maps.Marker({position: {lat: 52.215252, lng: 20.969019}, map: map, animation: google.maps.Animation.DROP});*/
 
     let marker;
     for (let i = 0; i < tasks.length; i++) {
