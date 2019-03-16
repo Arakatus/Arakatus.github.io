@@ -1,5 +1,5 @@
 let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
-
+let url = 'https://arakatus.github.io/';
 let infoWindowOpened = false;
 let mapOptionsNormal = {
     disableDefaultUI: true,
