@@ -52,20 +52,6 @@ let config = {
 firebase.initializeApp(config);
 
 window.addEventListener('load', async e => {
-    if ("serviceWorker" in navigator) {
-        if (navigator.serviceWorker.controller) {
-            console.log("Active service worker found, no need to register");
-        } else {
-            // Register the service worker
-            navigator.serviceWorker
-                .register("sw.js", {
-                    scope: "./"
-                })
-                .then(function (reg) {
-                    console.log("Service worker has been registered for scope: " + reg.scope);
-                });
-        }
-    }
     getData();
 });
 
@@ -145,25 +131,36 @@ function addInfo () {
                     </div>
                     <div class="inline">
                         <h1>Nazwa sklepu</h1>
-                        <h2 class="not-bold">Zabka</h2>
+                        <h2 id="nameInfo" class="not-bold"></h2>
                     </div>
                 </div>
                 <hr>
                 <h1>Adres</h1>
-                <h2 class="not-bold">Mazowiecka 8, Warszawa</h2>
+                <h2 id="addressInfo" class="not-bold"></h2>
                 <hr>
                 <h1>Wynagrodzenie</h1>
-                <h2 class="not-bold">25 zł</h2>
+                <h2 id="priceInfo" class="not-bold"></h2>
                 <hr>
                 <h1>Instrukcja zadania<h1>
                 <h2 class="not-bold">Szczegółowy opis</h2>
-                <h3 class="not-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</h3>
+                <h3 id="descInfo" class="not-bold"></h3>
                 <hr>
             </div>
             <br/>
             <button class="small blue button" onclick="bookTask()">WYKONAJ ZADANIE</button>
         </div>
     `;
+}
+
+function fillInfo (task) {
+    let element = document.querySelector("#nameInfo");
+    element.innerHTML = task.place;
+    element = document.querySelector("#addressInfo");
+    element.innerHTML = task.adress;
+    element = document.querySelector("#priceInfo");
+    element.innerHTML = task.stake;
+    element = document.querySelector("#descInfo");
+    element.innerHTML = task.instruction;
 }
 
 function bookTask () {
@@ -179,7 +176,7 @@ function addMarkerListener(marker) {
     marker.addListener('click', function() {
         disableMap();
         clearHeader();
-        enableInfo();
+        enableInfo(tasks[marker.task]);
         selectedMarker = this;
         console.log(tasks[marker.task]);
     });
@@ -201,9 +198,10 @@ function disableInfo () {
     element.style.display = 'none';
 }
 
-function enableInfo () {
+function enableInfo (task) {
     infoWindowOpened = true;
     let element = document.querySelector("#info");
+    fillInfo(task);
     element.style.display = '';
 }
 
