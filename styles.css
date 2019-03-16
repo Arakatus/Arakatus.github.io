@@ -76,6 +76,13 @@ textarea {
     color: white;
 }
 
+.header_text {
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    color: white;
+}
+
 .login_submit_text {
     font-family: Arial, sans-serif;
     font-weight: 900;
@@ -131,15 +138,15 @@ textarea {
 }
 
 .head-css {
+    text-align: center;
     overflow: hidden;
-    background-color: white;
+    background-color: blue;
+    background-color: rgba(0, 0, 255, 1);
     position: absolute;
-    top: 5%;
-    left: 10%;
-    right: 10%;
+    top: 0%;
     z-index: 99;
     height: 10%;
-    width: 80%;
+    width: 100%;
 }
 
 .shadow-under {
