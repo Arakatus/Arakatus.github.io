@@ -104,7 +104,7 @@ function initMap() {
 
     google.maps.event.addListener(infoWindow,'closeclick',function() {
         enableMap();
-        showHeader();
+        //showHeader();
     });
 
 }
@@ -165,7 +165,7 @@ function fillInfo (task) {
 
 function bookTask () {
     enableMap();
-    showHeader();
+    //showHeader();
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
@@ -175,7 +175,7 @@ function bookTask () {
 function addMarkerListener(marker) {
     marker.addListener('click', function() {
         disableMap();
-        clearHeader();
+        //clearHeader();
         enableInfo(tasks[marker.task]);
         selectedMarker = this;
         console.log(tasks[marker.task]);
