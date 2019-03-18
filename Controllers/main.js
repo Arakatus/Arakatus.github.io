@@ -107,7 +107,6 @@ function initMap() {
 function getData() {
     let taskid = 1;
     firebase.database().ref('/tasks/').once('value').then(function(snapshot) {
-        //console.log(snapshot.val()task1);
         while (snapshot.val()['task' + taskid]) {
             tasks.push(snapshot.val()['task' + taskid]);
             taskid++
@@ -159,11 +158,15 @@ function fillInfo (task) {
 }
 
 function bookTask () {
+    console.log(selectedMarker.task);
     enableMap();
     //showHeader();
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
+    firebase.database().ref('/tasks/task' + selectedMarker.task + '/').set({
+        booked: true
+    });
     alert('Zadanie zostalo zarezerwowane!');
 }
 
@@ -173,7 +176,6 @@ function addMarkerListener(marker) {
         //clearHeader();
         enableInfo(tasks[marker.task]);
         selectedMarker = this;
-        console.log(tasks[marker.task]);
     });
 }
 
