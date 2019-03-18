@@ -1,5 +1,6 @@
 let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
 let url = 'https://arakatus.github.io/';
+//let url = 'http://localhost:5000/';
 let infoWindowOpened = false;
 let mapOptionsNormal = {
     minZoom: 2,
@@ -158,14 +159,14 @@ function fillInfo (task) {
 }
 
 function bookTask () {
-    console.log(selectedMarker.task);
+    console.log('kurwama');
     enableMap();
     //showHeader();
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
-    firebase.database().ref('/tasks/task' + selectedMarker.task + '/').set({
-        booked: true
+    firebase.database().ref('/tasks/task' + selectedMarker.task + '/').child('booked').update({
+        true;
     });
     alert('Zadanie zostalo zarezerwowane!');
 }

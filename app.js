@@ -1,5 +1,5 @@
 let url = 'https://arakatus.github.io/';
-//http://localhost:5000/
+//let url = 'http://localhost:5000/';
 
 window.addEventListener('load', async e => {
     if ("serviceWorker" in navigator) {

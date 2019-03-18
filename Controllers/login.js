@@ -1,4 +1,6 @@
 let url = 'https://arakatus.github.io/';
+//let url = 'http://localhost:5000/';
+ 
 
 function submit () {
     let providedEmail = document.getElementById("email").value;
