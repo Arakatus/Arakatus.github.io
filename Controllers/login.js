@@ -1,5 +1,5 @@
 let url = 'https://arakatus.github.io/';
-//let url = 'http://localhost:5000/';
+//let url = 'file:///Users/maciejchmielewski/Documents/GitHub/Arakatus.github.io/';
  
 
 function submit () {
