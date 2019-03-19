@@ -14,7 +14,6 @@ window.addEventListener('load', async e => {
             });
         }
     }
-    //document.location.href = 'Screens/main.html';
     checkCookie();
 });
 
@@ -36,8 +35,8 @@ function getCookie(cname) {
 function checkCookie() {
     let email = getCookie("email");
     if (email !== "") {
-        document.location.href = 'Screens/main.html';
+        document.location.href = url + 'Screens/main';
     } else {
-        document.location.href = 'Screens/login.html';
+        document.location.href = url + 'Screens/login';
     }
 }

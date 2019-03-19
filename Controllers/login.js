@@ -1,8 +1,6 @@
 let url = 'https://arakatus.github.io/';
 
-
 function submit () {
-    console.log('twoja stara');
     let providedEmail = document.getElementById("email").value;
     if (providedEmail != null && providedEmail !== '') {
         if (validateEmail(providedEmail)) {
