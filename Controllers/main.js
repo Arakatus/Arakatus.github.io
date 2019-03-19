@@ -1,5 +1,7 @@
 let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
 let url = 'https://arakatus.github.io/';
+let tasks = new Array();
+
 let infoWindowOpened = false;
 let mapOptionsNormal = {
     minZoom: 2,
@@ -40,7 +42,6 @@ function showPosition(position) {
 }*/
 ////test/////////
 
-let tasks = new Array();
 let config = {
     apiKey: "AIzaSyAg29xSz_IaKpmb5bWpT9F4TC0whGO8kH4",
     authDomain: "confident-58909.firebaseapp.com",
@@ -87,8 +88,14 @@ function initMap() {
 
     let marker;
     for (let i = 0; i < tasks.length; i++) {
-        marker = new google.maps.Marker({position: {lat: tasks[i].lat, lng: tasks[i].lng}, map: map, animation: google.maps.Animation.DROP});
+        marker = new google.maps.Marker({
+            position: {lat: tasks[i].lat, lng: tasks[i].lng},
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: '../images/icons/pin-' + tasks[i].booked + '.png'
+        });
         marker.task = i;
+        console.log(marker.icon);
         addMarkerListener(marker);
     }
 
@@ -105,7 +112,8 @@ function initMap() {
 }
 
 function getData() {
-    let taskid = 1;
+    let taskid = 0;
+    tasks = [];
     firebase.database().ref('/tasks/').once('value').then(function(snapshot) {
         while (snapshot.val()['task' + taskid]) {
             tasks.push(snapshot.val()['task' + taskid]);
@@ -158,15 +166,15 @@ function fillInfo (task) {
 }
 
 function bookTask () {
-    console.log(selectedMarker.task);
     enableMap();
     //showHeader();
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
-    firebase.database().ref('/tasks/task' + selectedMarker.task + '/').set({
+    firebase.database().ref('/tasks/task' + selectedMarker.task + '/').update({
         booked: true
     });
+    getData();
     alert('Zadanie zostalo zarezerwowane!');
 }
 

@@ -1,6 +1,6 @@
 {
     "tasks" : {
-      "task1" : {
+      "task0" : {
         "lng" : 21.0136079,
         "lat" : 52.2477331,
         "place" : "Zabka",
@@ -9,7 +9,7 @@
         "instruction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.",
         "booked": false
       },
-      "task2" : {
+      "task1" : {
         "lng" : 20.969019,
         "lat" : 52.215252,
         "place" : "Carf",
@@ -18,7 +18,7 @@
         "instruction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.",
         "booked": false
       },
-      "task3" : {
+      "task2" : {
         "lng" : 20.961484909,
         "lat" : 52.171931437,
         "place" : "Roksa",
