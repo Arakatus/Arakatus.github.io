@@ -53,7 +53,7 @@ let config = {
 firebase.initializeApp(config);
 
 window.addEventListener('load', async e => {
-    checkCookie();
+    getData();
 });
 
 
