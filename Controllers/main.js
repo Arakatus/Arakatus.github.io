@@ -1,6 +1,6 @@
 let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
 let url = 'https://arakatus.github.io/';
-//let url = 'file:///Users/maciejchmielewski/Documents/GitHub/Arakatus.github.io/';
+//let url = 'http://localhost:5000/';
 let infoWindowOpened = false;
 let mapOptionsNormal = {
     minZoom: 2,
