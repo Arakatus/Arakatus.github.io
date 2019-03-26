@@ -14,7 +14,8 @@ window.addEventListener('load', async e => {
             });
         }
     }
-    checkCookie();
+    document.location = 'Screens/login.html'
+    //checkCookie();
 });
 
 function getCookie(cname) {

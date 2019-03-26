@@ -59,7 +59,7 @@ textarea {
     color: white;
 }
 
-.login_submit_text {
+/* .login_submit_text {
     font-family: Arial, sans-serif;
     font-weight: 900;
     font-size: 25px;
@@ -69,12 +69,35 @@ textarea {
     height: 100%;
     margin: 0 auto;
     padding-top: 18px;
+} */
+
+.signIn-btn {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    height: 10%;
+    width: 25%;
+    text-align: center;
+    background-color: green;
+    background-color: rgba(0, 128, 0, 1);
 }
 
-.login_submit_div {
-    position: fixed;
+.signUp-btn {
+    position: absolute;
     bottom: 0%;
-    height: 10%;
+    left: 150%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: green;
+    background-color: rgba(0, 128, 0, 1);
+}
+
+.remind-btn {
+    position: absolute;
+    bottom: 0%;
+    left: 150%;
+    height: 100%;
     width: 100%;
     text-align: center;
     background-color: green;

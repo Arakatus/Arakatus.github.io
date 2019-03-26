@@ -5,7 +5,7 @@ function submit () {
     if (providedEmail != null && providedEmail !== '') {
         if (validateEmail(providedEmail)) {
             setCookie("email", providedEmail, 365);
-            checkCookie();
+            //checkCookie();
         } else {
             alert('Invalid Email!');
         }
