@@ -1,4 +1,5 @@
 //Firebase configuration details
+let signUpMode = false;
 
 let config = {
     apiKey: "AIzaSyANhJ4ZqyMuzupRLM4BpFyKR9NluWwxmPU",
@@ -12,44 +13,16 @@ let config = {
 //Firebase initialization
 firebase.initializeApp(config);
 
+document.getElementById("repeatedPassword").style.display = "none";
+
 //credentials variables
 var email, password, repeatedPassword;
-
-// // function signIn() {
-//     console.log('SignIn');
-//     // getCredentials();
-//     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-//         if (error) {
-//             console.log(error);
-//         } else {
-//             document.location.href = "main.html";
-//             console.log('jestem tu');
-//         }
-//         var errorCode = error.code;
-//         var errorMessage = error.message;
-//     });
-// }
-
-// function signUp() {
-//     console.log('signUp');
-//     getCredentials();
-//     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-//         // Handle Errors here.
-//         var errorCode = error.code;
-//         var errorMessage = error.message;
-//         console.log('jestem tu');
-//     });
-//  }
-
-// // function remind() {
-// //     console.log('remind');
-// // }
 
 document.querySelector('.signIn-btn').addEventListener('click', function() {
     console.log('sign in');
     getCredentials();
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-            alert(error.message)
+            alert(error.message);
             return;
         }).then(function(result) {
             console.log(result)
@@ -58,14 +31,26 @@ document.querySelector('.signIn-btn').addEventListener('click', function() {
 });
 
 document.querySelector('.signUp-btn').addEventListener('click', function() {
-    console.log('signup');
-    getCredentials();
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(error);
-    });
+    if (signUpMode) {
+        console.log('signup');
+        getCredentials();
+        if (repeatedPassword !== password) {
+            alert('Provided passwords are different');
+            return;
+        } 
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+            alert(error.message);
+            return;
+        }).then(function(result){
+            alert("Your account has been successfuly created, please sign in with provided credentials.");
+            document.getElementById("repeatedPassword").style.display = "none";
+            document.getElementById("password").value = "";
+        });
+    } else {
+        signUpMode = true;
+        document.getElementById("repeatedPassword").style.display = "block";
+    }
+    
 });
 
 document.querySelector('.remind-btn').addEventListener('click', function() {

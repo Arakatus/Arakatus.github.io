@@ -43,18 +43,18 @@ function showPosition(position) {
 ////test/////////
 
 let config = {
-    apiKey: "AIzaSyAg29xSz_IaKpmb5bWpT9F4TC0whGO8kH4",
-    authDomain: "confident-58909.firebaseapp.com",
-    databaseURL: "https://confident-58909.firebaseio.com",
-    projectId: "confident-58909",
-    storageBucket: "confident-58909.appspot.com",
-    messagingSenderId: "1076549656704"
+    apiKey: "AIzaSyANhJ4ZqyMuzupRLM4BpFyKR9NluWwxmPU",
+    authDomain: "hustleapp-d7c9f.firebaseapp.com",
+    databaseURL: "https://hustleapp-d7c9f.firebaseio.com",
+    projectId: "hustleapp-d7c9f",
+    storageBucket: "hustleapp-d7c9f.appspot.com",
+    messagingSenderId: "854291696423"
 };
 
 firebase.initializeApp(config);
 
 window.addEventListener('load', async e => {
-    //checkCookie();
+    getData();
 });
 
 
