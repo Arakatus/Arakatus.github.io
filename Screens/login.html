@@ -40,15 +40,17 @@
             <span class="login_text-small">Email:</span>
             <span class="login_text-small">Password:</span>
             <br/>
-            <input type="text" id="email" value="" size="40">
+            <input type="text" id="email" value="dgsdgsd" size="40">
             <input type="text" id="password" value="" size="40">
-        </div>
-            <div onclick="signIn()" class="signIn-btn">
-            <div onclick="signUp()" class="signUp-btn">
-            <div onclick="remind()" class="remind-btn">
-        </div>
+            <input type="text" id="repeatedPassword" value="" size="40">
+            <button class="signIn-btn">Sign In</button>
+            <button class="signUp-btn">Sign Up</button>
+            <button class="remind-btn">Remind</button>
     </div>
 </div>
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
 <script src="../Controllers/login.js"></script>
 </body>
 </html>

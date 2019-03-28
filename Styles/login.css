@@ -74,34 +74,28 @@ textarea {
 .signIn-btn {
     position: absolute;
     bottom: 0%;
-    left: 0%;
+    left: 10%;
     height: 10%;
-    width: 25%;
-    text-align: center;
-    background-color: green;
-    background-color: rgba(0, 128, 0, 1);
+    width: 10%;
+    color: green;
 }
 
 .signUp-btn {
     position: absolute;
     bottom: 0%;
-    left: 150%;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    background-color: green;
-    background-color: rgba(0, 128, 0, 1);
+    left: 45%;
+    height: 10%;
+    width: 10%;
+    color:yellow;
 }
 
 .remind-btn {
     position: absolute;
     bottom: 0%;
-    left: 150%;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    background-color: green;
-    background-color: rgba(0, 128, 0, 1);
+    right: 10%;
+    height: 10%;
+    width: 10%;
+    color: purple;
 }
 
 .login_text-small {
