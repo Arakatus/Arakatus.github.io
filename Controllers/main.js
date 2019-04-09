@@ -171,7 +171,7 @@ function bookTask () {
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
-    let isBooked = selectedMarker.task.booked;
+    let isBooked = selectedMarker.booked;
     console.log(JSON.stringify(selectedMarker.task));
     if (isBooked) {
         alert('Zadanie zostalo zwolnione!');
