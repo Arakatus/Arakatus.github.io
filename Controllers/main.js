@@ -171,11 +171,16 @@ function bookTask () {
     infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
+    let isBooked = selectedMarker.task.booked;
+    if (isBooked) {
+        alert('Zadanie zostalo zarezerwowane!');
+    } else {
+        alert('Zadanie zostalo zwolnione!');
+    }
     firebase.database().ref('/tasks/task' + selectedMarker.task + '/').update({
-        booked: true
+        booked: !isBooked
     });
     getData();
-    alert('Zadanie zostalo zarezerwowane!');
 }
 
 function addMarkerListener(marker) {
