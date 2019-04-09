@@ -145,8 +145,6 @@ function bookTask () {
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
     let isBooked = tasks[selectedMarker.task].booked;
-    console.log(JSON.stringify(isBooked));
-    console.log(JSON.stringify(tasks[selectedMarker.task]));
     if (isBooked) {
         alert('Zadanie zostalo zwolnione!');
     } else {
@@ -160,11 +158,6 @@ function bookTask () {
 
 function updateMarkers () {
     console.log('test11');
-    for (let i = 0; i < allMarkers.length; i++) {
-        allMarkers[i].setMap(null);
-    }
-    allMarkers = [];
-    console.log('test12');
     tasks = [];
     let taskid = 0;
     firebase.database().ref('/tasks/').once('value').then(function(snapshot) {
@@ -174,16 +167,8 @@ function updateMarkers () {
         }
         console.log(tasks.length);
 
-        let marker;
-        for (let i = 0; i < tasks.length; i++) {
-            marker = new google.maps.Marker({
-                position: {lat: tasks[i].lat, lng: tasks[i].lng},
-                map: map,
-                icon: '../images/icons/pin-' + tasks[i].booked + '.png'
-            });
-            marker.task = i;
-            allMarkers.push(marker);
-            addMarkerListener(marker);
+        for (let i = 0; i < allMarkers.length; ++i) {
+            allMarkers[i].setIcon('../images/icons/pin-' + tasks[allMarkers[i].task].booked + '.png');
         }
         console.log('test14');
 
