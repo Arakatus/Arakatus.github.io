@@ -171,26 +171,25 @@ function updateMarkers () {
         while (snapshot.val()['task' + taskid]) {
             tasks.push(snapshot.val()['task' + taskid]);
             taskid++;
-            console.log('testid');
         }
+        console.log(tasks.length);
+
+        let marker;
+        for (let i = 0; i < tasks.length; i++) {
+            marker = new google.maps.Marker({
+                position: {lat: tasks[i].lat, lng: tasks[i].lng},
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: '../images/icons/pin-' + tasks[i].booked + '.png'
+            });
+            marker.task = i;
+            allMarkers.push(marker);
+            addMarkerListener(marker);
+        }
+        console.log('test14');
+
+        setTimeout(updateMarkers, 20000);
     });
-    console.log(tasks.length);
-
-    let marker;
-    for (let i = 0; i < tasks.length; i++) {
-        marker = new google.maps.Marker({
-            position: {lat: tasks[i].lat, lng: tasks[i].lng},
-            map: map,
-            animation: google.maps.Animation.DROP,
-            icon: '../images/icons/pin-' + tasks[i].booked + '.png'
-        });
-        marker.task = i;
-        allMarkers.push(marker);
-        addMarkerListener(marker);
-    }
-    console.log('test14');
-
-    setTimeout(updateMarkers, 20000);
 }
 
 function addMarkerListener(marker) {
