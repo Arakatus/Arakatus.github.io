@@ -188,7 +188,7 @@ function bookTask () {
 
 function updateMarkers () {
     for (let i = 0; i < allMarkers.length; ++i) {
-        allMarkers[i].icon = '../images/icons/pin-' + tasks[i].booked + '.png'
+        allMarkers[i].setIcon('../images/icons/pin-' + tasks[i].booked + '.png');
     }
 }
 
