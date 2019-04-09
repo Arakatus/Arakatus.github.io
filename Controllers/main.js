@@ -83,18 +83,6 @@ function initMap() {
         }
     });
 
-    let marker;
-    for (let i = 0; i < tasks.length; i++) {
-        marker = new google.maps.Marker({
-            position: {lat: tasks[i].lat, lng: tasks[i].lng},
-            map: map,
-            animation: google.maps.Animation.DROP,
-            icon: '../images/icons/pin-' + tasks[i].booked + '.png'
-        });
-        marker.task = i;
-        allMarkers.push(marker);
-        addMarkerListener(marker);
-    }
     updateMarkers();
 }
 
@@ -171,14 +159,33 @@ function bookTask () {
 }
 
 function updateMarkers () {
+    for (let i = 0; i < allMarkers.length; i++) {
+        allMarkers[i].setMap(null);
+    }
+    allMarkers = [];
+
     tasks = [];
     let taskid = 0;
     firebase.database().ref('/tasks/').once('value').then(function(snapshot) {
         while (snapshot.val()['task' + taskid]) {
             tasks.push(snapshot.val()['task' + taskid]);
-            taskid++
+            taskid++;
         }
     });
+
+    let marker;
+    for (let i = 0; i < tasks.length; i++) {
+        marker = new google.maps.Marker({
+            position: {lat: tasks[i].lat, lng: tasks[i].lng},
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: '../images/icons/pin-' + tasks[i].booked + '.png'
+        });
+        marker.task = i;
+        allMarkers.push(marker);
+        addMarkerListener(marker);
+    }
+
     for (let i = 0; i < allMarkers.length; ++i) {
         allMarkers[i].setIcon('../images/icons/pin-' + tasks[allMarkers[i].task].booked + '.png');
     }
