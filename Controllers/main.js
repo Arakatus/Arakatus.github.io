@@ -146,8 +146,6 @@ function bookTask () {
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
     let isBooked = tasks[selectedMarker.task].booked;
-    console.log(JSON.stringify(isBooked));
-    console.log(JSON.stringify(tasks[selectedMarker.task]));
     if (isBooked) {
         alert('Zadanie zostalo zwolnione!');
     } else {
@@ -160,7 +158,6 @@ function bookTask () {
 }
 
 function updateMarkers () {
-    console.log('test11');
     tasks = [];
     let taskid = 0;
     firebase.database().ref('/tasks/').once('value').then(function(snapshot) {
@@ -168,7 +165,6 @@ function updateMarkers () {
             tasks.push(snapshot.val()['task' + taskid]);
             taskid++;
         }
-        console.log(tasks.length);
 
         if (runOnce) {
             let marker;
@@ -190,7 +186,6 @@ function updateMarkers () {
                 allMarkers[i].setIcon('../images/icons/pin-' + tasks[allMarkers[i].task].booked + '.png');
             }
         }
-        console.log('test14');
 
         setTimeout(updateMarkers, 20000);
     });
@@ -239,10 +234,8 @@ function enableMap () {
 function checkCookie() {
     let email = getCookie("email");
     if (email !== "") {
-        console.log('test1');
         getData();
     } else {
-        console.log('test2');
         document.location.href = url + 'Screens/login';
     }
 }
