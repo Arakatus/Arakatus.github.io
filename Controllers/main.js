@@ -159,11 +159,12 @@ function bookTask () {
 }
 
 function updateMarkers () {
+    console.log('test11');
     for (let i = 0; i < allMarkers.length; i++) {
         allMarkers[i].setMap(null);
     }
     allMarkers = [];
-
+    console.log('test12');
     tasks = [];
     let taskid = 0;
     firebase.database().ref('/tasks/').once('value').then(function(snapshot) {
@@ -172,6 +173,7 @@ function updateMarkers () {
             taskid++;
         }
     });
+    console.log('test13');
 
     let marker;
     for (let i = 0; i < tasks.length; i++) {
@@ -185,10 +187,8 @@ function updateMarkers () {
         allMarkers.push(marker);
         addMarkerListener(marker);
     }
+    console.log('test14');
 
-    for (let i = 0; i < allMarkers.length; ++i) {
-        allMarkers[i].setIcon('../images/icons/pin-' + tasks[allMarkers[i].task].booked + '.png');
-    }
     setTimeout(updateMarkers, 20000);
 }
 
