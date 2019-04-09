@@ -1,4 +1,5 @@
 let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
+let runOnce = true;
 let url = 'https://arakatus.github.io/';
 let tasks = [];
 let allMarkers = [];
@@ -145,6 +146,8 @@ function bookTask () {
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
     let isBooked = tasks[selectedMarker.task].booked;
+    console.log(JSON.stringify(isBooked));
+    console.log(JSON.stringify(tasks[selectedMarker.task]));
     if (isBooked) {
         alert('Zadanie zostalo zwolnione!');
     } else {
@@ -167,8 +170,25 @@ function updateMarkers () {
         }
         console.log(tasks.length);
 
-        for (let i = 0; i < allMarkers.length; ++i) {
-            allMarkers[i].setIcon('../images/icons/pin-' + tasks[allMarkers[i].task].booked + '.png');
+        if (runOnce) {
+            let marker;
+            for (let i = 0; i < tasks.length; i++) {
+                marker = new google.maps.Marker({
+                    position: {lat: tasks[i].lat, lng: tasks[i].lng},
+                    map: map,
+                    icon: '../images/icons/pin-' + tasks[i].booked + '.png'
+                });
+                marker.task = i;
+                allMarkers.push(marker);
+                addMarkerListener(marker);
+            }
+            runOnce = false;
+        }
+
+        if (!runOnce) {
+            for (let i = 0; i < allMarkers.length; ++i) {
+                allMarkers[i].setIcon('../images/icons/pin-' + tasks[allMarkers[i].task].booked + '.png');
+            }
         }
         console.log('test14');
 
