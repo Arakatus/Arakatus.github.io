@@ -172,6 +172,7 @@ function bookTask () {
 
 function updateMarkers () {
     tasks = [];
+    let taskid = 0;
     firebase.database().ref('/tasks/').once('value').then(function(snapshot) {
         while (snapshot.val()['task' + taskid]) {
             tasks.push(snapshot.val()['task' + taskid]);
