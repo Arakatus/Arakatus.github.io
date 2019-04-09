@@ -172,10 +172,11 @@ function bookTask () {
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
     let isBooked = selectedMarker.task.booked;
+    console.log(isBooked);
     if (isBooked) {
-        alert('Zadanie zostalo zarezerwowane!');
-    } else {
         alert('Zadanie zostalo zwolnione!');
+    } else {
+        alert('Zadanie zostalo zarezerwowane!');
     }
     firebase.database().ref('/tasks/task' + selectedMarker.task + '/').update({
         booked: !isBooked
