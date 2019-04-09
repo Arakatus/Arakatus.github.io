@@ -99,7 +99,7 @@ function initMap() {
         allMarkers.push(marker);
         addMarkerListener(marker);
     }
-
+    updateMarkers();
 }
 
 function getData() {
