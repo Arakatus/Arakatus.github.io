@@ -100,16 +100,6 @@ function initMap() {
         addMarkerListener(marker);
     }
 
-
-    infoWindow = new google.maps.InfoWindow({
-        content: addInfo()
-    });
-
-    google.maps.event.addListener(infoWindow,'closeclick',function() {
-        enableMap();
-        //showHeader();
-    });
-
 }
 
 function getData() {
@@ -168,8 +158,6 @@ function fillInfo (task) {
 
 function bookTask () {
     enableMap();
-    //showHeader();
-    infoWindow.close();
     map.setCenter(selectedMarker.getPosition());
     disableInfo();
     let isBooked = tasks[selectedMarker.task].booked;
@@ -187,9 +175,11 @@ function bookTask () {
 }
 
 function updateMarkers () {
+    console.log('test');
     for (let i = 0; i < allMarkers.length; ++i) {
-        allMarkers[i].setIcon();
+        allMarkers[i].setIcon('../images/icons/pin-' + tasks[allMarkers[i].task].booked + '.png');
     }
+    setTimeout(updateMarkers, 20000);
 }
 
 function addMarkerListener(marker) {
