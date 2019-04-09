@@ -171,7 +171,13 @@ function bookTask () {
 }
 
 function updateMarkers () {
-    console.log('test');
+    tasks = [];
+    firebase.database().ref('/tasks/').once('value').then(function(snapshot) {
+        while (snapshot.val()['task' + taskid]) {
+            tasks.push(snapshot.val()['task' + taskid]);
+            taskid++
+        }
+    });
     for (let i = 0; i < allMarkers.length; ++i) {
         allMarkers[i].setIcon('../images/icons/pin-' + tasks[allMarkers[i].task].booked + '.png');
     }
