@@ -173,7 +173,7 @@ function updateMarkers () {
             taskid++;
         }
     });
-    console.log('test13');
+    console.log(tasks.length);
 
     let marker;
     for (let i = 0; i < tasks.length; i++) {
