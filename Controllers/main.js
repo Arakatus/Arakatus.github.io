@@ -1,6 +1,7 @@
 let map, selectedMarker, infoWindow, userLocation, installPromptEvent;
 let url = 'https://arakatus.github.io/';
-let tasks = new Array();
+let tasks = [];
+let allMarkers = [];
 
 let infoWindowOpened = false;
 let mapOptionsNormal = {
@@ -95,7 +96,7 @@ function initMap() {
             icon: '../images/icons/pin-' + tasks[i].booked + '.png'
         });
         marker.task = i;
-        console.log(marker.icon);
+        allMarkers.push(marker);
         addMarkerListener(marker);
     }
 
@@ -182,7 +183,13 @@ function bookTask () {
     firebase.database().ref('/tasks/task' + selectedMarker.task + '/').update({
         booked: !isBooked
     });
-    getData();
+    updateMarkers();
+}
+
+function updateMarkers () {
+    for (let i = 0; i < allMarkers.length; ++i) {
+        allMarkers[i].icon = '../images/icons/pin-' + tasks[i].booked + '.png'
+    }
 }
 
 function addMarkerListener(marker) {
