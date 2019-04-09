@@ -189,7 +189,7 @@ function addMarkerListener(marker) {
         disableMap();
         //clearHeader();
         enableInfo(tasks[marker.task]);
-        selectedMarker = this;
+        selectedMarker = marker;
     });
 }
 
