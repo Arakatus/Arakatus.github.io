@@ -179,7 +179,6 @@ function updateMarkers () {
             marker = new google.maps.Marker({
                 position: {lat: tasks[i].lat, lng: tasks[i].lng},
                 map: map,
-                animation: google.maps.Animation.DROP,
                 icon: '../images/icons/pin-' + tasks[i].booked + '.png'
             });
             marker.task = i;
