@@ -54,10 +54,6 @@ let config = {
 
 firebase.initializeApp(config);
 
-window.addEventListener('load', async e => {
-    checkCookie();
-});
-
 
 function initMap() {
     let element = document.querySelector("#info");
