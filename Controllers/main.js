@@ -183,12 +183,12 @@ function bookTask () {
     firebase.database().ref('/tasks/task' + selectedMarker.task + '/').update({
         booked: !isBooked
     });
-    updateMarkers();
+    selectedMarker.setIcon('../images/icons/pin-' + !isBooked + '.png');
 }
 
 function updateMarkers () {
     for (let i = 0; i < allMarkers.length; ++i) {
-        allMarkers[i].setIcon('../images/icons/pin-' + tasks[i].booked + '.png');
+        allMarkers[i].setIcon();
     }
 }
 
