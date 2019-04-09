@@ -171,7 +171,7 @@ function updateMarkers () {
         while (snapshot.val()['task' + taskid]) {
             tasks.push(snapshot.val()['task' + taskid]);
             taskid++;
-            console.log('y');
+            console.log('testid');
         }
     });
     console.log(tasks.length);
