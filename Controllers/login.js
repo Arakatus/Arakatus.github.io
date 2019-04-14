@@ -21,36 +21,32 @@ var email, password, repeatedPassword;
 document.querySelector('.signIn-btn').addEventListener('click', function() {
     console.log('sign in');
     getCredentials();
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-            alert(error.message);
-            return;
-        }).then(function(result) {
-            console.log(result)
-            document.location.href = 'main.html';
-        });
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function(result) {
+        console.log(result);
+        document.location.href = "main.html";
+    }).catch(function(error) {
+        alert(error.message);
+    });
 });
 
 document.querySelector('.signUp-btn').addEventListener('click', function() {
     if (signUpMode) {
-        console.log('signup');
         getCredentials();
         if (repeatedPassword !== password) {
             alert('Provided passwords are different');
             return;
         } 
-        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-            alert(error.message);
-            return;
-        }).then(function(result){
+        firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
             alert("Your account has been successfuly created, please sign in with provided credentials.");
             document.getElementById("repeatedPassword").style.display = "none";
             document.getElementById("password").value = "";
+        }).catch(function(error){
+            alert(error.message);
         });
     } else {
         signUpMode = true;
         document.getElementById("repeatedPassword").style.display = "block";
     }
-    
 });
 
 document.querySelector('.remind-btn').addEventListener('click', function() {
