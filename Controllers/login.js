@@ -11,14 +11,12 @@ let config = {
 };
 
 //Firebase initialization
-firebase.initializeApp(config);
-
-document.getElementById("repeatedPassword").style.display = "none";
+// firebase.initializeApp(config);
 
 //credentials variables
 var email, password, repeatedPassword;
 
-document.querySelector('.signIn-btn').addEventListener('click', function() {
+document.querySelector('.sign-in-btn').addEventListener('click', function() {
     console.log('sign in');
     getCredentials();
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(result) {
@@ -29,29 +27,44 @@ document.querySelector('.signIn-btn').addEventListener('click', function() {
     });
 });
 
-document.querySelector('.signUp-btn').addEventListener('click', function() {
-    if (signUpMode) {
-        getCredentials();
-        if (repeatedPassword !== password) {
-            alert('Provided passwords are different');
-            return;
-        } 
-        firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
-            alert("Your account has been successfuly created, please sign in with provided credentials.");
-            document.getElementById("repeatedPassword").style.display = "none";
-            document.getElementById("password").value = "";
-        }).catch(function(error){
-            alert(error.message);
-        });
-    } else {
-        signUpMode = true;
-        document.getElementById("repeatedPassword").style.display = "block";
-    }
+document.querySelector('.sign-up-form-btn').addEventListener('click', function() {
+	document.querySelector('.sign-in-screen').style.opacity = 0;
+	document.querySelector('.sign-in-screen').style.visibility = "hidden";
+	document.querySelector('.sign-up-screen').style.visibility = "visible";
+	document.querySelector('.sign-up-screen').style.opacity = 1;
+    // if (signUpMode) {
+    //     getCredentials();
+    //     if (repeatedPassword !== password) {
+    //         alert('Provided passwords are different');
+    //         return;
+    //     } 
+    //     firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
+    //         alert("Your account has been successfuly created, please sign in with provided credentials.");
+    //         document.getElementById("repeatedPassword").style.display = "none";
+    //         document.getElementById("password").value = "";
+    //     }).catch(function(error){
+    //         alert(error.message);
+    //     });
+    // } else {
+    //     signUpMode = true;
+    //     document.getElementById("repeatedPassword").style.display = "block";
+    // }
 });
+
+document.querySelector('.back-arrow-btn').addEventListener('click', function() {
+	console.log('back');
+	document.querySelector('.sign-in-screen').style.opacity = 1;
+	document.querySelector('.sign-in-screen').style.visibility = "visible";
+	document.querySelector('.sign-up-screen').style.visibility = "hidden";
+	document.querySelector('.sign-up-screen').style.opacity = 0;
+});
+
 
 document.querySelector('.remind-btn').addEventListener('click', function() {
     getCredentials();
 });
+
+document.querySelector('.sign-up-btn').addEventListener('click', function() {console.log('yieeeee')});
 
 function getCredentials() {
     email = document.getElementById("email").value;

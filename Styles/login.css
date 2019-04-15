@@ -3,65 +3,155 @@
 	padding: 0px;
 	box-sizing: border-box;
 	background: transparent;
+	border: none;
+	outline: none;
 }
 
 body {
-	background-image: url("../images/background_v1.jpg");
-	background-size: cover;
+	/* background-image: url("../images/background_v1.jpg");
+	background-size: cover; */
 	height: 100vh;
 	width: 100vw;
 }
 
-h1 {
+/* SIGN IN SCREEN */
+.sign-in-screen {
+	background-image: url("../images/background_v1.jpg");
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+	transition: opacity 1s, visibility 1s;
+}
+
+.sign-in-header {
+	position: absolute;
+	width: 100vw;
 	padding: 15vh 0 0 0;
 	margin: 0;
 	font-family: Microsoft YaHei-bold, sans-serif;
 	font-weight: 700;
-	font-size: 250%;
+	font-size: 6vh;
 	color: rgb(22, 31, 82);
 	text-align: center;
 }
 
 .bottom-container {
 	position: absolute;
-	width: 100%;
-	height: 50%;
-	margin-top: 5%;
+	width: 100vw;
+	height: 42vh;
+	margin-top: 5vh;
 	bottom: 0px;
 }
 
 input {
-	width: 80vw;
+	width: 74vw;
 	height: 5vh;
-	margin: 5vh 10vw 0 10vw;
+	margin: 3vh 13vw 0 13vw;
 	color: white;
-	border-bottom: 1px solid white;
+	border-bottom: 2px solid white;
+	font-size: 2vh;
 }
 
 input::placeholder {
 	color: white;	
+	font-size: 2vh
 }
 
 .remind-btn {
-	margin: 2vh 0 0 0;
+	margin: 2vh 13vw 0 13vw;
 	color: white;
 	float: right;
+	font-size: 2vh;
 }
 
 .sign-in-btn {
 	position: absolute;
 	height: 6vh;
-	width: 70vw;
-	margin: 7vh 15vw 0 15vw;
+	width: 64vw;
+	margin: 7vh 18vw 0 18vw;
 	border-radius: 3vh;
 	background-color: white;
+	color: rgb(22, 31, 82);
+	font-size: 3vh;
+	text-align: center;
+	font-family: Arial, sans-serif;
 }
 
-.sign-up-btn {
+.sign-up-form-btn {
 	position: absolute;
 	width: 100vw;
+	height: 2vh;
 	margin: 5vh 0 0 0;
 	bottom: 5vh;
 	text-align: center;
 	color: white;
+	font-size: 2vh;
 }
+
+/* SIGN UP SCREEN */
+.sign-up-screen {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	background-color:  rgb(22, 31, 82);;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1s, visibility 1s;
+}
+
+.back-arrow-btn {
+	position: absolute;
+	z-index: 10;
+	width: 6vh;
+	height: 6vh;	
+	padding: 5vh 0 0 2vh;
+	color: white;
+}
+
+.sign-up-header {
+	position: absolute;
+	width: 60vw;
+	height: 6vh;
+	padding: 5vh 0 0 0;
+	margin: 0 20vw 0 20vw;
+	font-family: Microsoft YaHei-bold, sans-serif;
+	font-weight: 700;
+	font-size: 6vh;
+	color: white;
+	text-align: center;
+}
+
+.sign-up-title {
+	position: absolute;
+	width: 100vw;
+	padding: 20vh 0 0 13vw;
+	font-family: Microsoft YaHei-bold, sans-serif;
+	font-weight: 100;
+	font-size: 4vh;
+	color: white;
+	text-align: left;
+}
+
+.registration-container {
+	position: absolute;
+	width: 100vw;
+	height: 50vh;
+	bottom: 20vh;
+}
+
+.sign-up-btn {
+	position: absolute;
+	height: 6vh;
+	width: 64vw;
+	margin: 0vh 18vw 0 18vw;
+	bottom: 13vh;
+	border-radius: 3vh;
+	background-color: white;
+	color: rgb(22, 31, 82);
+	font-size: 3vh;
+	text-align: center;
+	font-family: Arial, sans-serif;
+}
+
